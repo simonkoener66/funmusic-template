@@ -62,7 +62,7 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['scripts/vendor/gmap.js',
+                src: ['scripts/gmap.js',
                     'bower_components/slimScroll/jquery.slimscroll.min.js',
                     'bower_components/angular/angular.min.js',
                     'bower_components/angular-animate/angular-animate.min.js',
@@ -92,7 +92,7 @@ module.exports = function(grunt) {
                     'bower_components/angular-ui-tree/dist/angular-ui-tree.js',
                     'bower_components/jqvmap/jqvmap/jquery.vmap.min.js',
                     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-                    'scripts/vendor/other_charts.js',
+                    'scripts/other_charts.js',
                     'scripts/extras.js',
                     'app/*.js' ],
                 dest: 'dist/app.js'
