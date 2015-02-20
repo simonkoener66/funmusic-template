@@ -1,5 +1,5 @@
 {
-  "name": "adminio",
+  "name": "angular-ioadmin",
   "version": "0.0.1",
   "devDependencies": {
     "grunt": "~0.4.5",
@@ -9,6 +9,7 @@
     "grunt-contrib-compress": "~0.9.1",
     "grunt-contrib-concat": "~0.4.0",
     "grunt-contrib-connect": "~0.8.0",
+    "grunt-contrib-copy": "^0.8.0",
     "grunt-contrib-cssmin": "^0.10.0",
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-uglify": "~0.5.0",

@@ -1,11 +1,10 @@
 {
   "name": "ioadmin",
   "version": "0.0.0",
-  "homepage": "https://github.com/joaogarin/ioadmin",
   "authors": [
-    "joaogarin <joao.garin@gmail.com>"
+    "admin <admin@example.com>"
   ],
-  "description": "An angular IOS style admin template",
+  "description": "An angular admin template",
   "main": "index.html",
   "license": "MIT",
   "ignore": [

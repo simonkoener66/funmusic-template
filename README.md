@@ -1,4 +1,4 @@
-<h3>An angular js IOS style admin app.</h3>
+<h3>An angular js admin app.</h3>
 
 Uses several charing libraries including : 
 
@@ -8,19 +8,29 @@ morris charts<br/>
 
 It is built using bootstrap with several custom features.
 
-Also included are grunt configurations and bower dependencies for development testing and production deployment.
+Also included are grunt configurations for development testing and production deployment.
 
 <h4>Install using grunt : </h4>
 
 1 ) Install node js (http://nodejs.org/download/)
 
-2 ) In the application root folder run : npm install
+2 ) Install necessary packages :
+
+grunt-contrib-jshint
+grunt-contrib-clean
+grunt-contrib-connect
+grunt-contrib-compress
+grunt-contrib-cssmin
+grunt-contrib-concat
+grunt-contrib-uglify
+grunt-html2js
+grunt-contrib-watch
+grunt-bower-task
+
+
+3 ) In the application root folder run : npm install
 
 This will install all grunt dependencies so that tasks can be run
-
-3 ) Run bower install
-
-This will install all project dependencies like angular, bootstrap etc.
 
 4 ) Run :
 
