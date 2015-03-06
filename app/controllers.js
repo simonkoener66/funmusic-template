@@ -12,7 +12,7 @@ angular.module("app.controllers", []).controller("AdminAppCtrl", ["$scope", "$lo
             };
 
             $scope.info = {
-                theme_name: "ADMIN BOX",
+                theme_name: "Kimono",
                 user_name: "Jane Doe"
             };
 
@@ -49,8 +49,8 @@ angular.module("app.controllers", []).controller("AdminAppCtrl", ["$scope", "$lo
 
 */
 
-angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
-        function($scope) {
+angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",'config',
+        function($scope,config) {
             return $scope.easypie1 = {
                 percent: 25,
                 options: {
@@ -58,7 +58,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                         duration: 1e2,
                         enabled: !0
                     },
-                    barColor: "#c1bfc0",
+                    barColor: "#00FFA9",
                     lineCap: "round",
                     size: 130,
                     lineWidth: 8
@@ -71,7 +71,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                         duration: 1e2,
                         enabled: !0
                     },
-                    barColor: "#383d43",
+                    barColor: "#00FFA9",
                     lineCap: "round",
                     size: 130,
                     lineWidth: 8
@@ -84,7 +84,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                         duration: 1e2,
                         enabled: !0
                     },
-                    barColor: "#db5031",
+                    barColor: "#B5FE68",
                     lineCap: "round",
                     size: 130,
                     lineWidth: 8
@@ -97,7 +97,9 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                         duration: 1e2,
                         enabled: !0
                     },
-                    barColor: "#c1bfc0",
+                    trackColor: false,
+                    scaleColor:false,
+                    barColor: config.primary_color,
                     lineCap: "round",
                     size: 67,
                     lineWidth: 5
@@ -110,7 +112,9 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                         duration: 1e2,
                         enabled: !0
                     },
-                    barColor: "#383d43",
+                    trackColor: false,
+                    scaleColor:false,
+                    barColor: config.secondary_color,
                     lineCap: "round",
                     size: 67,
                     lineWidth: 5
@@ -123,7 +127,9 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                         duration: 1e2,
                         enabled: !0
                     },
-                    barColor: "#db5031",
+                    trackColor: false,
+                    scaleColor:false,
+                    barColor: config.third_color,
                     lineCap: "round",
                     size: 67,
                     lineWidth: 5
@@ -149,13 +155,13 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                         color: "#555555"
                     },
                     limitMax: "false",
-                    colorStart: "#c1bfc0",
-                    colorStop: "#c1bfc0",
+                    colorStart: "#00FFA9",
+                    colorStop: "#00FFA9",
                     strokeColor: "#F5F5F5",
                     generateGradient: !0,
                     percentColors: [
-                        [0, "#c1bfc0"],
-                        [1, "#c1bfc0"]
+                        [0, "#00FFA9"],
+                        [1, "#00FFA9"]
                     ]
                 }
             }, $scope.gauge2 = {
@@ -174,13 +180,13 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                         color: "#555555"
                     },
                     limitMax: "false",
-                    colorStart: "#383d43",
-                    colorStop: "#383d43",
+                    colorStart: "#00FFA9",
+                    colorStop: "#00FFA9",
                     strokeColor: "#F5F5F5",
                     generateGradient: !0,
                     percentColors: [
-                        [0, "#383d43"],
-                        [1, "#383d43"]
+                        [0, "#00FFA9"],
+                        [1, "#00FFA9"]
                     ]
                 }
             }, $scope.gauge3 = {
@@ -199,13 +205,13 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                         color: "#555555"
                     },
                     limitMax: "false",
-                    colorStart: "#db5031",
-                    colorStop: "#db5031",
+                    colorStart: "#B5FE68",
+                    colorStop: "#B5FE68",
                     strokeColor: "#F5F5F5",
                     generateGradient: !0,
                     percentColors: [
-                        [0, "#db5031"],
-                        [1, "#db5031"]
+                        [0, "#B5FE68"],
+                        [1, "#B5FE68"]
                     ]
                 }
             };
@@ -391,26 +397,26 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 ]
             },$scope.chartjsPolarArea = [{
                 value: 300,
-                color:"#383d43",
-                highlight: "#383d43",
+                color:"#00FFA9",
+                highlight: "#00FFA9",
                 label: "Blue"
             },
                 {
                     value: 50,
-                    color: "#db5031",
-                    highlight: "#db5031",
+                    color: "#B5FE68",
+                    highlight: "#B5FE68",
                     label: "Orange"
                 },
                 {
                     value: 100,
-                    color: "#fef9d9",
-                    highlight: "#fef9d9",
+                    color: "#00C7FA",
+                    highlight: "#00C7FA",
                     label: "Yellow"
                 },
                 {
                     value: 40,
-                    color: "#c1bfc0",
-                    highlight: "#c1bfc0",
+                    color: "#00FFA9",
+                    highlight: "#00FFA9",
                     label: "Grey"
                 },
                 {
@@ -420,42 +426,43 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                     label: "Dark Brown"
                 }],$scope.chartjsPie = [{
                 value: 300,
-                color:"#383d43",
-                highlight: "#383d43",
+                color:"#00FFA9",
+                highlight: "#00FFA9",
                 label: "Blue"
             },
                 {
                     value: 50,
-                    color: "#db5031",
-                    highlight: "#db5031",
+                    color: "#B5FE68",
+                    highlight: "#B5FE68",
                     label: "Orange"
                 },
                 {
                     value: 100,
-                    color: "#c1bfc0",
-                    highlight: "#c1bfc0",
+                    color: "#00FFA9",
+                    highlight: "#00FFA9",
                     label: "Gray"
                 }],$scope.chartjsDoughnut = [{
                 value: 300,
-                color:"#383d43",
-                highlight: "#383d43",
+                color:"#00FFA9",
+                highlight: "#00FFA9",
                 label: "Blue"
             },
                 {
                     value: 50,
-                    color: "#db5031",
-                    highlight: "#db5031",
+                    color: "#B5FE68",
+                    highlight: "#B5FE68",
                     label: "Orange"
                 },
                 {
                     value: 100,
-                    color: "#c1bfc0",
-                    highlight: "#c1bfc0",
+                    color: "#00FFA9",
+                    highlight: "#00FFA9",
                     label: "Gray"
                 }];
         }
-    ]).controller("flotChartCtrl", ["$scope",
-        function($scope) {
+    ]).controller("flotChartCtrl", ["$scope",'config',
+        function($scope,config) {
+
             var areaChart, barChart, lineChart1;
 
             return lineChart1 = {}, lineChart1.data1 = [
@@ -486,7 +493,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 data: lineChart1.data1,
                 label: "New visitors",
                 lines: {
-                    fill: !0
+                    fill: !1
                 }
             }, {
                 data: lineChart1.data2,
@@ -519,7 +526,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                     shadowSize: 0
 
                 },
-                colors: ["#c1bfc0", "#db5031"],
+                colors: [config.primary_color, config.secondary_color],
                 tooltip: !0,
                 tooltipOpts: {
                     defaultTheme: !1
@@ -527,9 +534,9 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 grid: {
                     hoverable: !0,
                     clickable: !0,
-                    tickColor: "#f9f9f9",
+                    tickColor: config.chart_lines,
                     borderWidth: 1,
-                    borderColor: "#eeeeee"
+                    borderColor: config.chart_lines
                 },
                 xaxis: {
                     ticks: [
@@ -596,11 +603,11 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 grid: {
                     hoverable: !0,
                     clickable: !0,
-                    tickColor: "#f9f9f9",
+                    tickColor: "#f5f5f5",
                     borderWidth: 1,
-                    borderColor: "#eeeeee"
+                    borderColor: "#f5f5f5"
                 },
-                colors: ["#c1bfc0", "#db5031"],
+                colors: [config.primary_color, config.secondary_color],
                 tooltip: !0,
                 tooltipOpts: {
                     defaultTheme: !1
@@ -656,13 +663,13 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 grid: {
                     hoverable: !0,
                     borderWidth: 1,
-                    borderColor: "#eeeeee"
+                    borderColor: "#f5f5f5"
                 },
                 tooltip: !0,
                 tooltipOpts: {
                     defaultTheme: !1
                 },
-                colors: ["#383d43", "#db5031", "#fef9d9"]
+                colors: [config.primary_color, config.secondary_color, config.third_color]
             }, $scope.pieChart = {}, $scope.pieChart.data = [{
                 label: "Download Sales",
                 data: 12
@@ -688,7 +695,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                     hoverable: !0,
                     clickable: !0
                 },
-                colors: ["#383d43", "#db5031", "#fef9d9","#503f3c"],
+                colors: [config.primary_color, config.secondary_color, config.third_color,config.fourth_color],
                 tooltip: !0,
                 tooltipOpts: {
                     content: "%p.0%, %s",
@@ -720,7 +727,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                     hoverable: !0,
                     clickable: !0
                 },
-                colors: ["#383d43", "#db5031", "#c1bfc0","#503f3c"],
+                colors: [config.primary_color, config.secondary_color, config.third_color,config.fourth_color],
                 tooltip: !0,
                 tooltipOpts: {
                     content: "%p.0%, %s",
@@ -755,7 +762,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                     hoverable: !0,
                     clickable: !0
                 },
-                colors: ["#2693E9", "#F5862C", "#43B040", "#619CC4", "#6D90C5"],
+                colors: [config.primary_color, config.secondary_color, config.third_color,config.fourth_color],
                 tooltip: !0,
                 tooltipOpts: {
                     content: "%p.0%, %s",
@@ -765,15 +772,15 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
         }
     ]).controller("flotChartCtrl.realtime", ["$scope",
         function() {}
-    ]).controller("sparklineCtrl", ["$scope",
-        function($scope) {
+    ]).controller("sparklineCtrl", ["$scope","config",
+        function($scope,config) {
             return $scope.demoData1 = {
                 sparkData: [3, 1, 2, 2, 4, 6, 4, 5, 2, 4, 5, 3, 4, 6, 4, 7],
                 sparkOptions: {
                     type: "line",
                     lineColor: "#fff",
                     highlightLineColor: "#fff",
-                    fillColor: "#383d43",
+                    fillColor: "#00FFA9",
                     spotColor: !1,
                     minSpotColor: !1,
                     maxSpotColor: !1,
@@ -784,8 +791,8 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 sparkData: [3, 1, 2, 3, 5, 3, 4, 2],
                 sparkOptions: {
                     type: "line",
-                    lineColor: "#db5031",
-                    fillColor: "#c1bfc0",
+                    lineColor: "#B5FE68",
+                    fillColor: "#00FFA9",
                     spotColor: !1,
                     minSpotColor: !1,
                     maxSpotColor: !1,
@@ -796,7 +803,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 sparkData: [3, 1, 2, 3, 5, 3, 4, 2],
                 sparkOptions: {
                     type: "bar",
-                    barColor: "#db5031",
+                    barColor: "#B5FE68",
                     width: "100px",
                     height: "50px"
                 }
@@ -804,7 +811,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 sparkData: [1, 3, 2, 5, 4, 2, 1, 7, 1, 8, 4, 3, 5, 2, 4, 5, 1, 7, 1, 8],
                 sparkOptions: {
                     type: "bar",
-                    barColor: "#c1bfc0",
+                    barColor: "#00FFA9",
                     width: "250px",
                     height: "30px"
                 }
@@ -812,7 +819,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 sparkData: [3, 1, 2, 3, 5, 3, 4, 2, 5, 4, 2, 6, 2, 4, 3, 1],
                 sparkOptions: {
                     type: "bar",
-                    barColor: "#383d43",
+                    barColor: "#00FFA9",
                     width: "200px",
                     height: "30px"
                 }
@@ -828,7 +835,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 sparkData: [3, 1, 2, 3, 5, 3, 4, 2],
                 sparkOptions: {
                     type: "pie",
-                    sliceColors: ["#383d43", "#db5031", "#c1bfc0", "#fef9d9", "#503f3c", "#365340"],
+                    sliceColors: ["#00FFA9", "#B5FE68", "#00FFA9", "#00C7FA", "#503f3c", "#365340"],
                     width: "50px",
                     height: "50px"
                 }
@@ -836,8 +843,8 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 sparkData: [1, 2, -3, -5, 3, 1, -4, 2],
                 sparkOptions: {
                     type: "tristate",
-                    posBarColor: "#383d43",
-                    negBarColor: "#c1bfc0",
+                    posBarColor: "#00FFA9",
+                    negBarColor: "#00FFA9",
                     width: "100%",
                     height: "50px"
                 }
@@ -845,9 +852,9 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 sparkData: [3, 1, 2, 3, 5, 3, 4, 2],
                 sparkOptions: {
                     type: "line",
-                    lineColor: "#db5031",
+                    lineColor: "#B5FE68",
                     highlightLineColor: "#7ACBEE",
-                    fillColor: "#c1bfc0",
+                    fillColor: "#00FFA9",
                     spotColor: !1,
                     minSpotColor: !1,
                     maxSpotColor: !1,
@@ -858,7 +865,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 sparkData: [3, 1, 2, 3, 5, 3, 4, 2],
                 sparkOptions: {
                     type: "bar",
-                    barColor: "#383d43",
+                    barColor: "#00FFA9",
                     barWidth: 10,
                     width: "100%",
                     height: "150px"
@@ -867,7 +874,7 @@ angular.module("app.chart.ctrls", []).controller("chartingCtrl", ["$scope",
                 sparkData: [3, 1, 2, 3, 5],
                 sparkOptions: {
                     type: "pie",
-                    sliceColors: ["#383d43", "#db5031", "#c1bfc0", "#fef9d9", "#503f3c", "#365340"],
+                    sliceColors: ["#00FFA9", "#B5FE68", "#00FFA9", "#00C7FA", "#503f3c", "#365340"],
                     width: "150px",
                     height: "150px"
                 }

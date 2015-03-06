@@ -1,0 +1,20 @@
+ul.team {
+  display: inline-block;
+  padding-left: 0; }
+  ul.team li {
+    display: inline-block;
+    width: 100%;
+    list-style: none;
+    line-height: 30px;
+    margin-bottom: 10px; }
+    ul.team li img {
+      float: left; }
+    ul.team li span {
+      float: left;
+      margin-left: 20px; }
+      ul.team li span p {
+        margin-bottom: 0; }
+    ul.team li .label {
+      float: right; }
+
+/*# sourceMappingURL=team.css.map */

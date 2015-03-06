@@ -20,7 +20,7 @@ module.exports = function(grunt) {
         copy: {
             main: {
                 files: [{
-                    //for bootstrap fonts
+                    //for jquery files
                     expand: true,
                     dot: true,
                     cwd: 'bower_components/jquery/dist',
@@ -31,6 +31,13 @@ module.exports = function(grunt) {
                     expand: true,
                     dot: true,
                     cwd: 'bower_components/bootstrap/dist',
+                    src: ['fonts/*.*'],
+                    dest: 'dist'
+                },{
+                    //for dripicons fonts
+                    expand: true,
+                    dot: true,
+                    cwd: 'bower_components/dripicons',
                     src: ['fonts/*.*'],
                     dest: 'dist'
                 },{
@@ -75,10 +82,11 @@ module.exports = function(grunt) {
                 files: {
                     'dist/css/main.css': [
                         'bower_components/fontawesome/css/font-awesome.min.css',
+                        'bower_components/dripicons/css/dripicons.css',
                         'bower_components/weather-icons/css/weather-icons.min.css',
                         'bower_components/bootstrap/dist/css/bootstrap.min.css',
                         'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
-                        'styles/main.css'
+                        'styles/styles.css'
                     ]
                 }
             },

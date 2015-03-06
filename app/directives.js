@@ -189,9 +189,9 @@ angular.module("app.chart.directives", []).directive("gaugeChart", [
                         grid: {
                             hoverable: !0,
                             borderWidth: 1,
-                            borderColor: "#fff"
+                            borderColor: "#f5f5f5"
                         },
-                        colors: ["#383d43"]
+                        colors: ["#6f9a37"]
                     }), update();
                 }
             };
@@ -387,7 +387,7 @@ angular.module("app.directives", []).directive("imgHolder", [
                 link: function(scope, ele) {
                     var $a, $aRest, $lists, $listsRest, app;
                     return $lists = ele.find("ul").parent("li"),
-                        $lists.append('<i class="fa fa-arrow-circle-o-right icon-has-ul"></i>'),
+                        //$lists.append('<i class="fa fa-arrow-circle-o-right icon-has-ul"></i>'),
                         $a = $lists.children("a"),
                         $listsRest = ele.children("li").not($lists),
                         $aRest = $listsRest.children("a"),

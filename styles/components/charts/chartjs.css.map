@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,eAAgB;EACd,KAAK,EAAE,eAAe;EACtB,SAAS,EAAE,MAAM;EACjB,MAAM,EAAE,eAAe",
+"sources": ["chartjs.scss"],
+"names": [],
+"file": "chartjs.css"
+}
