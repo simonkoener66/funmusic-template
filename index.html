@@ -21,10 +21,11 @@
 </head>
 <body data-ng-app="app" id="app" data-custom-background="" data-off-canvas-nav="" data-ng-controller="AdminAppCtrl">
 
-<div class="nav-style--alternative">
+<div class="" data-ng-controller="PlayListCtrl as generalPlaylist">
+
+  <audio media-player="mediaPlayer" playlist="generalPlaylist.audioPlaylist"></audio>
+
   <div data-ng-hide="checkIfOwnPage()" data-ng-cloak="" class="no-print">
-
-
     <aside data-ng-include=" 'app/views/navigation.html' " id="nav-container"></aside>
   </div>
 
@@ -54,13 +55,5 @@
 
 <!--Uncomment for deployment using Grunt-->
 <script type="text/javascript" src="dist/js/app.js"></script>
-
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-  <defs>
-    <filter id="blur">
-      <feGaussianBlur stdDeviation="5"/>
-    </filter>
-  </defs>
-</svg>
 </body>
 </html>

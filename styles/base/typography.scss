@@ -32,6 +32,7 @@ h4, .h4 {
   border-bottom: 1px solid #e5e5e5;
   padding-bottom: 10px;
   margin-bottom: 20px;
+  font-size:16px;
 }
 
 mark, .mark {
@@ -47,7 +48,8 @@ $text-colors: (
         warning:$color--warning,
         danger:$color--danger,
         violet:$color--info-alt,
-        dark:$color--gray-dark
+        dark:$color--gray-dark,
+        white:white
 );
 
 @each $text-class, $text-color in $text-colors {

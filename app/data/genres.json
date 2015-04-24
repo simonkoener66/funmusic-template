@@ -1,0 +1,56 @@
+[
+  {
+    "url_name": "beatles",
+    "name": "Mood",
+    "icon": "musicicon-acoustic4",
+    "image" : "https://ununsplash.imgix.net/photo-1418225043143-90858d2301b4?fit=crop&fm=jpg&h=700&q=75&w=1050"
+  },
+  {
+    "url_name": "beatles",
+    "name": "Country",
+    "icon": "musicicon-cornet3",
+    "image" : "https://download.unsplash.com/photo-1414912925664-0c502cc25dde"
+  },
+  {
+    "url_name": "beatles",
+    "name": "House",
+    "icon": "musicicon-dj4",
+    "image" : "https://download.unsplash.com/photo-1425136738262-212551713a58"
+  },
+  {
+    "url_name": "beatles",
+    "name": "Jazz",
+    "icon": "musicicon-saxophone8",
+    "image" : "https://download.unsplash.com/photo-1426200830301-372615e4ac54"
+  },
+  {
+    "url_name": "beatles",
+    "name": "Groovy",
+    "icon": "musicicon-bass4",
+    "image" : "https://download.unsplash.com/photo-1417128281290-30a42da46277"
+  },
+  {
+    "url_name": "beatles",
+    "name": "Classic",
+    "icon": "musicicon-music201",
+    "image" : "https://download.unsplash.com/photo-1414788020357-3690cfdab669"
+  },
+  {
+    "url_name": "beatles",
+    "name": "Zone",
+    "icon": "musicicon-loudspeaker8",
+    "image" : "https://download.unsplash.com/uploads/14134890947503c6effdc/72adf455"
+  },
+  {
+    "url_name": "beatles",
+    "name": "Radio",
+    "icon": "musicicon-radio43",
+    "image" : "https://download.unsplash.com/photo-1419332563740-42322047ff09"
+  },
+  {
+    "url_name": "beatles",
+    "name": "Percussion",
+    "icon": "musicicon-cymbals2",
+    "image" : "https://download.unsplash.com/reserve/NxxLccbqQdGtNc7xJ43e_ancestral-home.jpg"
+  }
+]

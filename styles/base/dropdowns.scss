@@ -1,18 +1,25 @@
 .dropdown-menu {
-  @include border-radius(0px);
+  @include border-radius(2px);
+  font-size:13px;
+}
+
+.dropdown-menu > li > a {
+  color:$color--text;
 }
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: #fff;
-  background-color: $color--primary;
+  color: $color--text;
+  background-color: $color--gray-very-light;
+  background-image:none;
 }
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
-  color: #fff;
   text-decoration: none;
   outline: 0;
-  background-color: $color--primary;
+  color: $color--text;
+  background-color: $color--gray-very-light;
+  background-image:none;
 }
 
 .dropdown-menu > .disabled > a, .dropdown-menu > .disabled > a:hover, .dropdown-menu > .disabled > a:focus {

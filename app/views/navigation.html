@@ -1,107 +1,252 @@
+<!-- Logo -->
+<div class="logo" data-ng-controller="AdminAppCtrl">
+  <a class="logo-link" href="#/">
+    <i class="logo-icon fa fa-spotify"></i>
+    <!--<span>{{info.theme_name}}</span>-->
+  </a>
 
+  <div class="form-group logo-search">
+    <div>
+      <input type="text" class="form-control" placeholder="Search site">
+      <span class="icon glyphicon glyphicon-search"></span>
+    </div>
+  </div>
+</div>
 
-<div id="nav-wrapper">
-    <ul id="nav"
-        data-ng-controller="NavCtrl"
-        data-slim-scroll
-        data-collapse-nav
-        data-highlight-active>
-        <li class="navigation-profile-picture">
-          <img src="dist/images/user.png" alt="" class="img80_80 img-circle">
-        </li>
-        <li>
-            <a href="#/dashboard"> <i class="icon-monitor"></i> <span>Dashboard</span></a>
-            <ul>
-                <li><a href="#/dashboard/dashboard"><i class="fa fa-circle submenu__icon"></i><span> Dashboard 1</span></a></span></li>
-                <li><a href="#/dashboard/dashboard2"><i class="fa fa-circle submenu__icon"></i><span> Dashboard 2</span></a></li>
-                <li><a href="#/dashboard/dashboard3"><i class="fa fa-circle submenu__icon"></i><span> Dashboard 3</span></a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#/ui"><i class="icon-gaming"></i><span>Ui Elements</span></a>
-            <ul>
-                <li><a href="#/ui/buttons"><i class="fa fa-circle submenu__icon"></i><span> Buttons</span></a></span></li>
-                <li><a href="#/ui/typography"><i class="fa fa-circle submenu__icon"></i><span> Typography</span></a></li>
-                <li><a href="#/ui/widgets"><i class="fa fa-circle submenu__icon"></i><span>Widgets </span><span class="badge badge-success">Trendy</span></a></li>
-                <li><a href="#/ui/grids"><i class="fa fa-circle submenu__icon"></i><span> Grids</span></a></li>
-                <li><a href="#/ui/icons"><i class="fa fa-circle submenu__icon"></i><span> Icons</span></a></li>
-                <li><a href="#/ui/components"><i class="fa fa-circle submenu__icon"></i><span> Bootstrap UI</span> <span class="badge badge-info">new</span></a></li>
-                <!--<li><a href="#/ui/timeline"><i class="fa fa-circle submenu__icon"></i> Timeline</a></li>-->
-                <li><a href="#/ui/nested-lists"><i class="fa fa-circle submenu__icon"></i><span>Nested Lists</span></a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#/pages"><i class="icon-window"></i><span> Custom Pages </span></a>
-            <ul>
-                <li><a href="#/pages/signin"><i class="fa fa-circle submenu__icon"></i><span> Sign in</span></a></li>
-                <li><a href="#/pages/signup"><i class="fa fa-circle submenu__icon"></i><span> Sign up</span></a></li>
-                <li><a href="#/pages/forgot"><i class="fa fa-circle submenu__icon"></i><span> Request password</span></a></li>
-                <li><a href="#/pages/profile"><i class="fa fa-circle submenu__icon"></i><span> User page</span></a></li>
-                <li><a href="#/pages/404"><i class="fa fa-circle submenu__icon"></i><span> 404</span></a></li>
-                <li><a href="#/pages/500"><i class="fa fa-circle submenu__icon"></i><span> 500</span></a></li>
-                <li><a href="#/pages/blank"><i class="fa fa-circle submenu__icon"></i><span> Blank page</span></a></li>
-                <li><a href="#/pages/contact"><i class="fa fa-circle submenu__icon"></i><span> Contact</span></a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#/table"><i class="icon-view-list-large"></i><span> Table styles</span></a>
-            <ul>
-                <li><a href="#/tables/static"><i class="fa fa-circle submenu__icon"></i><span> Normal tables</span></a></li>
-                <li><a href="#/tables/responsive"><i class="fa fa-circle submenu__icon"></i><span> Responsive tables</span></a></li>
-                <li><a href="#/tables/dynamic"><i class="fa fa-circle submenu__icon"></i><span> Dynamic tables</span></a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#/form"><i class="icon-align-left"></i><span> Form elements</span></a>
-            <ul>
-                <li><a href="#/forms/elements"><i class="fa fa-circle submenu__icon"></i><span> Form elements</span></a></li>
-                <li><a href="#/forms/validation"><i class="fa fa-circle submenu__icon"></i><span> Form validations</span></a></li>
-                <li><a href="#/forms/wizard"><i class="fa fa-circle submenu__icon"></i><span>Form wizard</span></a></li>
-                <li><a href="#/forms/layouts"><i class="fa fa-circle submenu__icon"></i><span> Form layouts</span></a></li>
-            </ul>
-        </li>
-       <li>
-            <a href="#/charts"><i class="icon-graph-pie"></i><span> Charting</span></a>
-            <ul>
-                <li><a href="#/charts/morris"><i class="fa fa-circle submenu__icon"></i><span>Morris Charts</span></a></li>
-                <li><a href="#/charts/chartjs"><i class="fa fa-circle submenu__icon"></i><span>Chart js</span></a></li>
-                <li><a href="#/charts/flot"><i class="fa fa-circle submenu__icon"></i><span>Flot Charts</span></a></li>
-                <li><a href="#/charts/others"><i class="fa fa-circle submenu__icon"></i><span>Other Charts</span></a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#/maps"><i class="icon-map"></i><span> Maps</span></a>
-            <ul>
-                <li><a href="#/maps/gmap"><i class="fa fa-circle submenu__icon"></i><span> Google</span></a></li>
-                <li><a href="#/maps/jqvmap"><i class="fa fa-circle submenu__icon"></i><span> Vector</span></a></li>
-            </ul>
-        </li>
-        <li class="nav-task">
-            <a href="#/tasks">
-                <i class="icon-calendar"></i><span> Tasks</span>
-                <span class="badge badge-danger main-badge">{{navInfo.tasks_number}}</span>
-            </a>
-        </li>
-        <li class="nav-footer">
-            <div class="nav-footer__footer-info" data-ng-controller="chartingCtrl">
+<div id="nav-wrapper" data-ng-controller="NavCtrl as navigation">
 
-                <div class="list-separator">
+  <div class="sidebar-nav-switch">
 
-                </div>
+    <div class="btn-group switch">
 
-                <div class="pull-left">
-                    <div easypiechart options="easypiesmall1.options" percent="easypiesmall1.percent" class="easypiechartsmall">
-                                    <span class="pie-percent">
-                                        <i class="icon-cloud color-white"></i>
-                                    </span>
-                    </div>
-                </div>
-                <div class="right-info">
-                    <p class="color-white">Registrations / Unique visitors</p>
-                </div>
+      <a class="btn main-nav-link home" ng-class="{active:navigation.navigationState.menu}" data-nav-section="home" data-ng-click="navigation.SwitchToMenu()">
+        <span class="label">BROWSE</span>
+      </a>
 
+      <a class="btn main-nav-link queue" ng-class="{active:navigation.navigationState.playlist}" data-nav-section="queue" data-ng-click="navigation.SwitchToPlaylist()">
+        <span class="label queue-label">
+            <span>QUEUE</span><span class="songs" ng-show="mediaPlayer.tracks > 0"> ({{mediaPlayer.currentTrack}} of {{mediaPlayer.tracks}})</span>
+        </span>
+      </a>
+
+    </div>
+
+  </div>
+
+  <div class="sidebar-nav-main navigation-menu-container" data-slim-scroll>
+
+    <div class="menu-navigation-menus" ng-show="navigation.navigationState.menu">
+
+      <div class="nav-user-menu sidebar-nav-content">
+
+        <ul class="sidebar-nav-menu" data-highlight-active>
+          <li id="user-menu" class="nav-item">
+            <div class="actions">
+              <a class="action-btn" href="#/dashboard">
+                <i class="action-icon fa fa-bell"></i>
+              </a>
+              <i id="user-settings-btn" class="action-icon fa fa-gear"></i>
             </div>
-        </li>
-    </ul>
+            <a class="nav-link profile" href="#/pages/profile">
+              <img src="dist/images/user.png" alt="" class="img20_20 img-circle">
+              <span class="label helper-tooltip-measured">Joao Garin</span>
+            </a>
+
+          </li>
+          <li id="user-menu" class="nav-item">
+            <a class="nav-link profile" href="#/dashboard">
+              <i class="icon fa fa-heart"></i>
+              <span class="label helper-tooltip-measured">Favourites</span>
+            </a>
+
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="nav-user-menu sidebar-nav-content">
+
+        <ul class="sidebar-nav-menu" data-highlight-active>
+          <li id="user-menu" class="nav-item">
+            <a class="nav-link profile" href="#/front">
+              <i class="icon fa fa-home"></i>
+              <span class="label helper-tooltip-measured">Home</span>
+            </a>
+
+          </li>
+          <li id="user-menu" class="nav-item">
+            <a class="nav-link profile" href="#/artist-list">
+              <i class="icon fa fa-headphones"></i>
+              <span class="label helper-tooltip-measured">Artists</span>
+            </a>
+
+          </li>
+
+          <li id="user-menu" class="nav-item">
+            <a class="nav-link profile" href="#/albums">
+              <i class="icon fa fa-bar-chart"></i>
+              <span class="label helper-tooltip-measured">Albums</span>
+            </a>
+
+          </li>
+
+          <li id="user-menu" class="nav-item">
+            <a class="nav-link profile" href="#/genres">
+              <i class="icon musicicon-alto"></i>
+              <span class="label helper-tooltip-measured">Genres</span>
+            </a>
+
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="nav-user-menu sidebar-nav-content">
+
+        <div class="sidebar-nav-content__header">
+        <span>
+          Your playlists
+        </span>
+        </div>
+
+        <ul class="sidebar-nav-menu" data-highlight-active data-ng-controller="UserPlayListCtrl as userplaylist">
+          <li id="user-menu" class="nav-item">
+            <a class="nav-link profile" href="javascript:;" data-ng-click="generalPlaylist.createNewPlaylist()">
+              <i class="icon fa fa-plus-circle"></i>
+              <span class="label helper-tooltip-measured">Create a playlist</span>
+            </a>
+
+          </li>
+          <!--<li id="user-menu" class="nav-item">
+            <a class="nav-link profile" href="#/artist/enya">
+              <i class="icon fa fa-book"></i>
+              <span class="label helper-tooltip-measured">Enya</span>
+            </a>
+
+          </li>
+
+          <li id="user-menu" class="nav-item">
+            <a class="nav-link profile" href="#/artist/beatles">
+              <i class="icon fa fa-book"></i>
+              <span class="label helper-tooltip-measured">Beatles</span>
+            </a>
+
+          </li>-->
+
+          <li id="user-menu" class="nav-item" ng-repeat="playlist in generalPlaylist.userPlaylists track by $index">
+            <a class="nav-link profile" href="#/playlist/{{playlist.url_name}}">
+              <i class="icon fa fa-book"></i>
+              <span class="label helper-tooltip-measured">{{playlist.name}}</span>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="playlist-item-list music-listing--queue" ng-show="navigation.navigationState.playlist">
+
+      <div class="music-listing__songs">
+
+        <div class="music-listing__row" ng-repeat="song in generalPlaylist.audioPlaylist" ng-class="{ active: mediaPlayer.playing && mediaPlayer.currentTrack-1 === $index }"
+             ui-draggable="true" drag="song" on-drop-success="generalPlaylist.removeSong($index)" ui-on-drop="generalPlaylist.dropSong($data, $index)">
+
+          <div class="music-listing__number">
+            {{ $index+1 }}
+          </div>
+
+          <div class="music-listing__row-actions">
+            <i class="fa fa-times action" ng-click="generalPlaylist.removeSong($index)" title="Remove song"></i>
+            <i class="fa fa-list action" title="More Options..."></i>
+          </div>
+
+          <div class="music-listing__name">
+
+            <div class="music-listing__thumbnail" ng-click="mediaPlayer.playPause($index)">
+              <img ng-src="{{song.image}}" alt="song__image"/>
+            </div>
+
+            <div class="music-listing__artist-name" ng-click="mediaPlayer.playPause($index)">
+              {{ song.artist }}
+            </div>
+            <div class="music-listing__song-name" ng-click="mediaPlayer.playPause($index)">
+              {{ song.title }}
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="player-region">
+
+    <div>
+
+      <div class="player-control">
+
+        <div class="player-control-top">
+
+          <div class="song-info">
+            <div class="song-info__image" ng-show="mediaPlayer.currentTrack">
+              <img src="{{generalPlaylist.getSongImage(mediaPlayer.currentTrack)}}" />
+            </div>
+            <div class="song-info__text">
+              <div class="song-info__title">{{generalPlaylist.getSongArtist(mediaPlayer.currentTrack)}}</div>
+              <div>{{generalPlaylist.getSongName(mediaPlayer.currentTrack)}}</div>
+            </div>
+          </div>
+
+          <div class="song-duration">
+            <span class="song-duration-beg">{{ mediaPlayer.formatTime }}</span>
+            <div class="progress" ng-click="mediaPlayer.seek(mediaPlayer.duration * seekPercentage($event))">
+              <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" ng-style="{ width: mediaPlayer.currentTime*100/mediaPlayer.duration + '%' }"></div>
+            </div>
+            <span class="song-duration-end">{{ mediaPlayer.formatDuration }}</span>
+          </div>
+        </div>
+        <div class="player-control-bottom">
+          <!--<div class="btn" ng-click="mediaPlayer.play()">
+                        <span>Simple Play</span>
+                        <i class="fa fa-play"></i>
+                      </div>-->
+          <div class="btn" ng-click="mediaPlayer.prev()">
+            <i class="fa fa-step-backward"></i>
+          </div>
+          <div class="btn" ng-click="mediaPlayer.playPause()">
+            <i class="fa" ng-class="{ 'fa-pause': mediaPlayer.playing, 'fa-play': !mediaPlayer.playing }"></i>
+          </div>
+          <div class="btn" ng-click="mediaPlayer.next()">
+            <i class="fa fa-step-forward"></i>
+          </div>
+          <!--<div class="btn btn-noclick">
+            <span>currentTrack: <span class="badge">{{ mediaPlayer.currentTrack }}</span></span>
+          </div>-->
+          <!--<div class="btn btn-noclick">
+            <span><i class="fa fa-clock-o"></i>: <span class="badge">{{ mediaPlayer.formatTime }}</span></span>
+          </div>-->
+          <div class="btn btn-noclick">
+            <span><span class="badge">{{ mediaPlayer.volume * 100 | number:0 }}%</span></span>
+          </div>
+          <div class="btn" ng-click="mediaPlayer.setVolume(mediaPlayer.volume - 0.1)">
+            <span><i class="fa fa-volume-down"></i></span>
+          </div>
+          <div class="btn" ng-click="mediaPlayer.setVolume(mediaPlayer.volume + 0.1)">
+            <span><i class="fa fa-volume-up"></i></span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 
 </div>

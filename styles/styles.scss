@@ -4,7 +4,6 @@
 
 @import "settings/colors";
 
-
 @import "partials/helpers";
 @import "partials/animations";
 
@@ -19,6 +18,7 @@
 @import "base/alerts";
 @import "base/buttons";
 @import "base/progress_bars";
+@import "base/lists";
 @import "base/list_groups";
 @import "base/panels";
 @import "base/modals";
@@ -30,6 +30,7 @@
 @import "components/charts/chartjs";
 @import "components/charts/flot";
 @import "components/layout/page";
+@import "components/layout/logo";
 @import "components/layout/top_header";
 @import "components/mail/mail";
 @import "components/maps/maps";
@@ -37,6 +38,7 @@
 @import "components/navigation/navbars";
 @import "components/navigation/breadcrumbs";
 @import "components/navigation/main_menu";
+@import "components/pages/front";
 @import "components/pages/profile";
 @import "components/pages/error";
 @import "components/pages/lock";
@@ -47,3 +49,9 @@
 @import "components/pages/contact";
 @import "components/pages/about";
 @import "components/pages/invoice";
+@import "components/pages/artist";
+@import "components/playlist/listing";
+@import "components/playlist/player";
+@import "components/playlist/listing-queue";
+@import "components/playlist/covers-listing";
+@import "components/playlist/genres-listing";

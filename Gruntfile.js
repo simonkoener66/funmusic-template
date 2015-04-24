@@ -56,12 +56,28 @@ module.exports = function(grunt) {
                     dest: 'dist'
                 },
                 {
+                    //for theme music fonts
+                    expand: true,
+                    dot: true,
+                    cwd: 'fonts',
+                    src: ['*.*'],
+                    dest: 'dist/fonts'
+                },
+                {
                     //for Images
                     expand: true,
                     dot: true,
                     cwd: 'images',
                     src: ['*.*','background/*'],
                     dest: 'dist/images'
+                },
+                {
+                  //for services data
+                  expand: true,
+                  dot: true,
+                  cwd: 'app/data',
+                  src: ['*.*'],
+                  dest: 'dist/data'
                 }]
             }
         },
@@ -86,6 +102,7 @@ module.exports = function(grunt) {
                         'bower_components/weather-icons/css/weather-icons.min.css',
                         'bower_components/bootstrap/dist/css/bootstrap.min.css',
                         'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
+                        'styles/fonts/music-icons/music-icons.css',
                         'styles/styles.css'
                     ]
                 }
@@ -115,7 +132,10 @@ module.exports = function(grunt) {
 
         concat: {
             options: {
-                separator: ';'
+                stripBanners: true,
+                sourceMap: true,
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                '<%= grunt.template.today("yyyy-mm-dd") %> */'
             },
             dist: {
                 src: ['bower_components/bootstrap/dist/js/bootstrap.min.js',
@@ -125,31 +145,15 @@ module.exports = function(grunt) {
                     'bower_components/angular-animate/angular-animate.min.js',
                     'bower_components/angular-route/angular-route.min.js',
                     'bower_components/angular-sanitize/angular-sanitize.min.js',
-                    'bower_components/underscore/underscore-min.js',
-                    'bower_components/raphael/raphael-min.js',
-                    'bower_components/morrisjs/morris.min.js',
-                    'bower_components/flot/jquery.flot.js',
-                    'bower_components/flot/jquery.flot.canvas.js',
-                    'bower_components/flot/jquery.flot.categories.js',
-                    'bower_components/flot/jquery.flot.crosshair.js',
-                    'bower_components/flot/jquery.flot.image.js',
-                    'bower_components/flot/jquery.flot.navigate.js',
-                    'bower_components/flot/jquery.flot.time.js',
-                    'bower_components/flot/jquery.flot.pie.js',
-                    'bower_components/flot/jquery.flot.resize.js',
-                    'bower_components/flot/jquery.flot.selection.js',
-                    'bower_components/flot/jquery.flot.stack.js',
-                    'bower_components/chartjs/Chart.min.js',
-                    'bower_components/jquery.sparkline.build/dist/jquery.sparkline.min.js',
-                    'bower_components/easypie/dist/angular.easypiechart.min.js',
-                    'bower_components/angular-wizard/dist/angular-wizard.js',
-                    'bower_components/rangy/rangy-core.min.js',
-                    'bower_components/rangy/rangy-selectionsaverestore.min.js',
-                    'bower_components/textAngular/dist/textAngular.min.js',
+                    'bower_components/angular-wizard/dist/angular-wizard.min.js',
                     'bower_components/angular-ui-tree/dist/angular-ui-tree.js',
-                    'bower_components/jqvmap/jqvmap/jquery.vmap.min.js',
                     'bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js',
-                    'scripts/other_charts.js',
+                    'bower_components/angular-media-player/dist/angular-media-player.min.js',
+                    'bower_components/raphael/raphael-min.js',
+                    'bower_components/underscore/underscore-min.js',
+                    'bower_components/jqvmap/jqvmap/jquery.vmap.min.js',
+                    'bower_components/angular-scroll/angular-scroll.min.js',
+                    'bower_components/ng-parallax/angular-parallax.min.js',
                     'scripts/extras.js',
                     'app/*.js' ],
                 dest: 'dist/js/app.js'

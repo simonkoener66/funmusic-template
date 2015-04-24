@@ -1,0 +1,108 @@
+.artist-banner {
+  position: relative;
+  height: 242px;
+  margin: 0 auto;
+  text-align:center;
+  color:white;
+
+  background-size: cover;
+  background-position: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 85%;
+    bottom: 0;
+    left:0;
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.1) 28%, rgba(0, 0, 0, 0.7) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0)), color-stop(28%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.7)));
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.1) 28%, rgba(0, 0, 0, 0.7) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.1) 28%, rgba(0, 0, 0, 0.7) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.1) 28%, rgba(0, 0, 0, 0.7) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.1) 28%, rgba(0, 0, 0, 0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#e6000000', GradientType=0);
+  }
+
+  .artist-inner {
+    display: inline-block;
+    width: 50%;
+    max-width: 70%;
+    margin: 0;
+    vertical-align: middle;
+    position:relative;
+
+    h3 {
+      font-weight:bold;
+    }
+  }
+
+  .artist-img {
+    margin-top:20px;
+
+    img {
+      width:80px;
+      height:auto;
+      border:3px solid white;
+    }
+  }
+
+  .artist-style {
+    .artist-genre {
+      display:inline-block;
+      margin:{
+        right:10px;
+      }
+      font-weight:bold;
+
+      span{
+        line-height: 13px;
+
+        &:before {
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          transform: translate(0, 0);
+          content: "\f111";
+          font-size: 8px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .artist-actions {
+    display:inline-block;
+    margin:auto;
+    margin-top:20px;
+
+    .btn {
+      display:inline-block;
+      margin-right:10px;
+    }
+  }
+}
+
+.share-artist {
+  height: 60px;
+  background: #fff;
+  text-align: center;
+  line-height: 60px;
+
+  .share-artist__buttons {
+    display:inline-block;
+    margin:auto;
+
+    .btn {
+      display:inline-block;
+      margin-right:5px;
+    }
+  }
+}
+
+.page-artist {
+
+}

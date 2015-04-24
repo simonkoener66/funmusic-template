@@ -1,0 +1,48 @@
+<div class="page page-list" data-ng-controller="GenresCtrl as genres">
+
+  <div class="row">
+
+    <div class="divider-md"></div>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+        <div class="row music-genres-listing">
+
+          <div data-ng-repeat="genre in genresList" class="col-md-3">
+
+            <div class="list-item__wrap">
+
+              <div class="list-item__play">
+                <a class="list-item__play-button" ng-href="#/artist/{{genre.url_name}}">
+                  <i class="fa fa-2x fa-spotify">
+
+                  </i>
+                </a>
+              </div>
+
+              <div class="list-item__image" style="background:url({{genre.image}});">
+                <div class="list-item__name">
+                  <div class="genre-icon">
+                    <i class="{{genre.icon}}">
+
+                    </i>
+                  </div>
+                  <h5>
+                    <a href="#/artist/{{genre.url_name}}">{{genre.name}}</a>
+                  </h5>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

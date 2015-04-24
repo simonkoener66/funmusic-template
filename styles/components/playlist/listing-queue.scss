@@ -1,0 +1,113 @@
+.music-listing--queue {
+  padding:10px;
+
+  .music-listing__header {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $color--gray-very-light;
+    height:60px;
+
+    .music-listing__actions-top {
+      float:left;
+      .btn {
+        margin:{
+          right:5px;
+        }
+      }
+    }
+
+    .music-listing__filter {
+      max-width:40%;
+      float:right;
+    }
+  }
+
+  .music-listing__songs {
+
+
+    .music-listing__row {
+      clear:both;
+      margin-bottom: 3px;
+      padding-bottom: 3px;
+      margin-top: 3px;
+      padding-top: 3px;
+      color:white;
+    }
+
+    .music-listing__number {
+      float:left;
+      width:25px;
+      height:25px;
+      line-height: 25px;
+      text-align:center;
+      position:relative;
+      margin-right:10px;
+
+      .play-button {
+        position:absolute;
+        top:-2px;
+        left: 0px;
+        visibility:hidden;
+        opacity:0;
+        @include transition(all 0.01s ease-out);
+      }
+    }
+
+    .music-listing__thumbnail {
+      float:left;
+      margin-right:10px;
+
+      img {
+        width:30px;
+        height:auto;
+        @include border-radius(2px);
+      }
+    }
+
+    .music-listing__name {
+
+      .music-listing__artist-name {
+        font-weight:bold;
+      }
+    }
+
+    .music-listing__row-actions {
+      height: 30px;
+      margin-right: 10px;
+      text-align: right;
+      line-height: 30px;
+      float: right;
+      visibility:hidden;
+      opacity:0;
+      @include transition(all 0.01s ease-out);
+
+      .action {
+        display: inline-block;
+        text-align:center;
+        cursor:pointer;
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        vertical-align: middle;
+        background: transparent;
+        color: $color--secondary-light;
+
+        &:hover {
+          color: $color--secondary-light;
+        }
+      }
+    }
+
+    .music-listing__row:hover .music-listing__row-actions,
+    .music-listing__row:hover .play-button
+    {
+      opacity:1;
+      visibility: visible;
+    }
+
+    .music-listing__row.active {
+      background-color: $color--secondary-light;
+      @include border-radius(4px);
+    }
+  }
+}

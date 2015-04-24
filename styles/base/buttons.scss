@@ -12,13 +12,15 @@
   background-image: none;
   border: none;
   white-space: nowrap;
+  padding:6px 25px;
+  text-shadow:none;
 
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  @include border-radius(3px);
-  @include opacity(0.9);
+  @include border-radius(20px);
+  @include opacity(1);
 }
 
 .btn:focus, .btn:active:focus, .btn.active:focus {
@@ -30,8 +32,7 @@
 .btn:hover, .btn:focus {
   color: #767676;
   text-decoration: none;
-  @include opacity(1);
-
+  @include opacity(0.9);
 }
 
 .btn:active, .btn.active {
@@ -50,7 +51,7 @@
 
 .btn-default {
   color: #767676;
-  background-color: #fafafa;
+  background-color: #ededed;
   border-color: #ededed;
 }
 
@@ -75,11 +76,15 @@
 }
 
 $button-styles: (
+        default:$color--gray-light,
         primary:$color--primary,
+        secondary:$color--secondary,
         success:$color--success,
         info:$color--info,
         warning:$color--warning,
-        danger:$color--danger
+        danger:$color--danger,
+        dark:$color--gray-dark,
+        white:white
 );
 
 @each $button, $btn-color in $button-styles {
@@ -137,6 +142,10 @@ $button-styles: (
     color: $btn-color;
     background-color: #fff;
   }
+}
+
+.btn-default {
+  color:$color--text;
 }
 
 .btn-link {
@@ -221,6 +230,34 @@ $button-styles: (
   background-color: #fff;
 }
 
+@each $button, $btn-color in $button-styles {
+
+  .btn-bordered-#{$button} {
+    color: $color--text;
+    background-color: transparent;
+    border-color: $btn-color;
+  }
+
+  .btn-bordered-#{$button}:hover,
+  .btn-bordered-#{$button}:focus,
+  .btn-bordered-#{$button}:active,
+  .btn-bordered-#{$button}.active {
+    color: #fff;
+    background-color: $btn-color;
+  }
+
+  .open .btn-bordered-#{$button}.dropdown-toggle {
+    color: #fff;
+    background-color: $btn-color;
+  }
+
+}
+
+.btn-bordered {
+  border-width:1px;
+  border-style:solid;
+}
+
 .btn-bordered-default {
   color: #767676;
   background-color: transparent;
@@ -232,106 +269,19 @@ $button-styles: (
   background-color: #fafafa;
 }
 
+.btn-bordered-white {
+  color: white;
+  background-color: transparent;
+}
+
+.btn-bordered-white:hover, .btn-bordered-white:focus, .btn-bordered-white:active, .btn-bordered-white.active {
+  color: white;
+  background-color: transparent;
+}
+
 .open .btn-bordered-default.dropdown-toggle {
   color: #767676;
   background-color: #fafafa;
-}
-
-.btn-bordered-primary {
-  color: #767676;
-  background-color: transparent;
-  border-color: $color--primary;
-}
-
-.btn-bordered-primary:hover, .btn-bordered-primary:focus, .btn-bordered-primary:active, .btn-bordered-primary.active {
-  color: #fff;
-  background-color: $color--primary;
-}
-
-.open .btn-bordered-primary.dropdown-toggle {
-  color: #fff;
-  background-color: $color--primary;
-}
-
-.btn-bordered-success {
-  color: #767676;
-  background-color: transparent;
-  border-color: $color--success;
-
-}
-
-.btn-bordered-success:hover, .btn-bordered-success:focus, .btn-bordered-success:active, .btn-bordered-success.active {
-  color: #fff;
-  background-color: $color--success;
-}
-
-.open .btn-bordered-success.dropdown-toggle {
-  color: #fff;
-  background-color: $color--primary;
-}
-
-.btn-bordered-info {
-  color: #767676;
-  background-color: transparent;
-  border-color: $color--info;
-}
-
-.btn-bordered-info:hover, .btn-bordered-info:focus, .btn-bordered-info:active, .btn-bordered-info.active {
-  color: #fff;
-  background-color: $color--info;
-}
-
-.open .btn-bordered-info.dropdown-toggle {
-  color: #fff;
-  background-color: $color--info;
-}
-
-.btn-bordered-warning {
-  color: #767676;
-  background-color: transparent;
-  border-color: #ecc143;
-}
-
-.btn-bordered-warning:hover, .btn-bordered-warning:focus, .btn-bordered-warning:active, .btn-bordered-warning.active {
-  color: #fff;
-  background-color: $color--warning;
-}
-
-.open .btn-bordered-warning.dropdown-toggle {
-  color: #fff;
-  background-color: $color--warning;
-}
-
-.btn-bordered-danger {
-  color: #767676;
-  background-color: transparent;
-  border-color: #e5613b;
-}
-
-.btn-bordered-danger:hover, .btn-bordered-danger:focus, .btn-bordered-danger:active, .btn-bordered-danger.active {
-  color: #fff;
-  background-color: $color--danger;
-}
-
-.open .btn-bordered-danger.dropdown-toggle {
-  color: #fff;
-  background-color: $color--danger;
-}
-
-.btn-bordered-dark {
-  color: #767676;
-  background-color: transparent;
-  border-color: #191b24;
-}
-
-.btn-bordered-dark:hover, .btn-bordered-dark:focus, .btn-bordered-dark:active, .btn-bordered-dark.active {
-  color: #fff;
-  background-color: $color--gray-dark;
-}
-
-.open .btn-bordered-dark.dropdown-toggle {
-  color: #fff;
-  background-color: $color--gray-dark;
 }
 
 .btn-direction {
@@ -608,6 +558,7 @@ $button-styles: (
   height: 30px;
   width: 30px;
   line-height: 30px;
+  @include border-radius(100%);
 }
 
 .btn-icon-md {
@@ -681,11 +632,11 @@ $social-profiles: (
 }
 
 .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
-  @include border-radius(0px);
+  @include border-radius(2px);
 }
 
 .btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
-  @include border-radius(0px);
+  @include border-radius(2px);
 }
 
 .badge {
@@ -728,4 +679,13 @@ $badge-colors: (
     background-color: $badge-color;
   }
 
+}
+
+.btn-tag {
+  background:$color--gray-light;
+  color:$color--text;
+  padding:3px 12px;
+  font-size:12px;
+  font-style:italic;
+  @include border-radius(2px);
 }

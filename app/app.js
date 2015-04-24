@@ -3,7 +3,7 @@
  Initialize the Angular App
  **************************/
 
-var app = angular.module("app", ["ngRoute", "ngAnimate","app.config", "ui.bootstrap", "easypiechart", "mgo-angular-wizard", "textAngular", "ui.tree", "ngMap", "ngTagsInput", "app.ui.ctrls", "app.ui.services", "app.controllers", "app.directives", "app.form.validation", "app.ui.form.ctrls", "app.ui.form.directives", "app.tables", "app.map", "app.task", "app.chart.ctrls", "app.chart.directives","countTo"]).run(["$rootScope", "$location",
+var app = angular.module("app", ["ngRoute", "ngAnimate","app.config", "ui.bootstrap", "mgo-angular-wizard", "ui.tree", "ngMap", "ngTagsInput", "app.ui.ctrls", "app.ui.services", "app.controllers", "app.directives", "app.form.validation", "app.ui.form.ctrls", "app.ui.form.directives", "app.tables", "app.map", "app.task","countTo", "mediaPlayer", "app.music"]).run(["$rootScope", "$location",
     function ($rootScope, $location) {
 
         $(document).ready(function(){
@@ -18,15 +18,11 @@ var app = angular.module("app", ["ngRoute", "ngAnimate","app.config", "ui.bootst
     }] ).config(["$routeProvider",
     function($routeProvider) {
         return $routeProvider.when("/", {
-            redirectTo: "/dashboard"
+            redirectTo: "ui/widgets"
         }).when("/dashboard", {
                 templateUrl: "app/views/dashboards/dashboard.html"
             }).when("/dashboard/dashboard", {
                 templateUrl: "app/views/dashboards/dashboard.html"
-            }).when("/dashboard/dashboard2", {
-                templateUrl: "app/views/dashboards/dashboard2.html"
-            }).when("/dashboard/dashboard3", {
-                templateUrl: "app/views/dashboards/dashboard3.html"
             }).when("/ui/typography", {
                 templateUrl: "app/views/ui_elements/typography.html"
             }).when("/ui/buttons", {
@@ -43,6 +39,18 @@ var app = angular.module("app", ["ngRoute", "ngAnimate","app.config", "ui.bootst
                 templateUrl: "app/views/ui_elements/timeline.html"
             }).when("/ui/nested-lists", {
                 templateUrl: "app/views/ui_elements/nested-lists.html"
+            }).when("/playlist/sample", {
+                templateUrl: "app/views/playlist/sample.html"
+            }).when("/artist/:title", {
+              templateUrl: "app/views/playlist/artist.html"
+            }).when("/playlist/:title", {
+              templateUrl: "app/views/playlist/playlist.html"
+            }).when("/artist-list", {
+              templateUrl: "app/views/playlist/artists-list.html"
+            }).when("/albums", {
+              templateUrl: "app/views/playlist/albums.html"
+            }).when("/genres", {
+              templateUrl: "app/views/playlist/genres.html"
             }).when("/forms/elements", {
                 templateUrl: "app/views/forms/elements.html"
             }).when("/forms/layouts", {
@@ -61,14 +69,6 @@ var app = angular.module("app", ["ngRoute", "ngAnimate","app.config", "ui.bootst
                 templateUrl: "app/views/tables/responsive.html"
             }).when("/tables/dynamic", {
                 templateUrl: "app/views/tables/dynamic.html"
-            }).when("/charts/others", {
-                templateUrl: "app/views/charts/charts.html"
-            }).when("/charts/morris", {
-                templateUrl: "app/views/charts/morris.html"
-            }).when("/charts/chartjs", {
-                templateUrl: "app/views/charts/chartjs.html"
-            }).when("/charts/flot", {
-                templateUrl: "app/views/charts/flot.html"
             }).when("/mail/inbox", {
                 templateUrl: "app/views/mail/inbox.html"
             }).when("/mail/compose", {
@@ -77,6 +77,8 @@ var app = angular.module("app", ["ngRoute", "ngAnimate","app.config", "ui.bootst
                 templateUrl: "app/views/mail/single.html"
             }).when("/pages/features", {
                 templateUrl: "app/views/pages/features.html"
+            }).when("/front", {
+              templateUrl: "app/views/pages/frontpage.html"
             }).when("/pages/signin", {
                 templateUrl: "app/views/pages/signin.html"
             }).when("/pages/signup", {
