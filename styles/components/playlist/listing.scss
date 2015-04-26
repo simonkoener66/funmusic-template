@@ -113,3 +113,19 @@
     }
   }
 }
+
+.empty-playlist {
+
+  text-align:center;
+  color:$color--gray-light;
+
+  .empty-icon {
+    font-size:100px;
+  }
+
+  .empty-message {
+    margin-top:20px;
+    font-size:20px;
+    color:$color--gray;
+  }
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "url_name": "beatles",
+    "artist": "Jason Derulo",
+    "name": "Tattoos",
+    "image": "dist/images/albums/album1.jpg",
+    "genre": ["Pop","Rock","Folk"]
+  },
+  {
+    "url_name": "enya",
+    "artist": "John Legend",
+    "name": "All of me",
+    "image": "dist/images/albums/album2.jpg",
+    "genre": ["New age","Celtic","World"]
+  },
+  {
+    "url_name": "beatles",
+    "artist": "Aloe Black",
+    "name": "Lift your spirit",
+    "image": "dist/images/albums/album3.jpg",
+    "genre": ["Rock","Jazz","World"]
+  },
+  {
+    "url_name": "beatles",
+    "artist": "Pharel Williams",
+    "name": "Girl",
+    "image": "dist/images/albums/album4.jpg",
+    "genre": ["Rock","Electro","Metal"]
+  },
+  {
+    "url_name": "beatles",
+    "artist": "Keane",
+    "name": "Under the iron sea",
+    "image": "dist/images/albums/album5.jpg",
+    "genre": ["Jazz","Chill","Groove"]
+  },
+  {
+    "url_name": "beatles",
+    "artist": "Wativ",
+    "name": "Wativ",
+    "image": "dist/images/albums/album6.jpg",
+    "genre": ["Classic","Piano","Orchestra"]
+  },
+  {
+    "url_name": "beatles",
+    "artist": "Pink floyd",
+    "name": "Division Bell",
+    "image": "dist/images/albums/album7.jpg",
+    "genre": ["Rock","Electro","Metal"]
+  },
+  {
+    "url_name": "beatles",
+    "artist": "Monty are I",
+    "name": "Break through the silence",
+    "image": "dist/images/albums/album8.jpg",
+    "genre": ["Rock","Electro","Metal"]
+  },
+  {
+    "url_name": "beatles",
+    "artist": "Rolling stones",
+    "name": "Forty Licks",
+    "image": "dist/images/albums/album9.jpg",
+    "genre": ["Rock","Electro","Metal"]
+  },
+  {
+    "url_name": "beatles",
+    "artist": "Mark Ronson",
+    "name": "The Business Intl",
+    "image": "dist/images/albums/album10.jpg",
+    "genre": ["Rock","Electro","Metal"]
+  },
+  {
+    "url_name": "beatles",
+    "artist": "Led Zeppelin",
+    "name": "Celebration Day",
+    "image": "dist/images/albums/album11.jpg",
+    "genre": ["Rock","Heavy","Metal"]
+  },
+  {
+    "url_name": "beatles",
+    "artist": "Lecrea Gravity",
+    "name": "Gravity",
+    "image": "dist/images/albums/album12.jpg",
+    "genre": ["Rock","Heavy","Metal"]
+  }
+]

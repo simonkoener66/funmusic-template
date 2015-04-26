@@ -3,6 +3,14 @@
   @include border-radius(3px);
 }
 
+.panel-transparent {
+  background:transparent;
+}
+
+.panel-body {
+  padding:30px;
+}
+
 .panel-body:before, .panel-body:after {
   content: " ";
   display: table;
@@ -79,6 +87,10 @@
 .panel-default {
   border: none;
   @include box-shadow(0 0 1px rgba(0, 0, 0, .1));
+}
+
+.panel-default.panel-default-clean {
+  @include box-shadow(none);
 }
 
 .panel-default > .panel-heading {

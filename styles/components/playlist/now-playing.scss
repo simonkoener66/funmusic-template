@@ -1,0 +1,34 @@
+.now-playing {
+
+  .now-playing__item {
+    margin: {
+      bottom:20px;
+    }
+  }
+
+  .now-playing__image {
+    display:inline-block;
+    margin-right:10px;
+  }
+
+  .now-playing__name {
+    display:inline-block;
+  }
+
+  .now-playing__song {
+    margin: {
+      top:10px;
+    }
+  }
+
+  .now-playing__artist {
+    margin: {
+      top:10px;
+    }
+
+    i {
+      color:$color--primary;
+    }
+  }
+
+}

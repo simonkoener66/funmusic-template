@@ -1,429 +1,295 @@
-<!-- Breadcrumbs -->
-<div class="region-breadcrumbs">
-    <ol class="breadcrumb">
-        <li><a href="/#"><i class="fa fa-home"></i></a></li>
-        <li class="active">Dashboard</li>
-    </ol>
-</div>
-<!-- end Breadcrumbs -->
-<header class="page-main-header">
+<div class="page page-full page-dashboard two-column">
 
-    <div class="row">
-        <div class="col-sm-6">
+  <section class="inner-wrapper">
+
+    <div class="inner-page scrollable">
+
+      <section>
+        <section class="panel panel-default panel-default-clean">
+          <div class="panel-body panel-body--dashboard">
+
+            <tabset class="ui-tab">
+              <tab heading="New Artists">
+
+                <div class="divider"></div>
+
+                <div data-ng-controller="ArtistListingCtrl as artistListing">
+                  <div class="row music-covers-listing minified">
+
+                    <div data-ng-repeat="artistItem in ArtistsSrv.artists" class="col-md-3">
+
+                      <div class="list-item__wrap">
+
+                        <div class="list-item__play">
+                          <a class="list-item__play-button" ng-href="#/artist/{{artistItem.url_name}}">
+                            <i class="fa fa-2x fa-spotify">
+
+                            </i>
+                          </a>
+                        </div>
+
+                        <div class="list-item__image">
+                          <img ng-src="{{artistItem.image}}"/>
+                        </div>
+
+                        <div class="list-item__name">
+                          <h5>
+                            {{artistItem.name}}
+                          </h5>
+                        </div>
+
+                        <div class="list-item__style">
+                          <div class="artist-genre" ng-repeat="genre in artistItem.genre">
+                            <span>{{genre}}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </tab>
+
+              <tab heading="New albums">
+
+                <div class="divider"></div>
+
+                <div data-ng-controller="AlbumsCtrl as albums">
+                  <div class="row music-covers-listing minified">
+
+                    <div data-ng-repeat="album in AlbumsSrv.albums" class="col-md-3">
+
+                      <div class="list-item__wrap">
+
+                        <div class="list-item__play">
+                          <a class="list-item__play-button" ng-href="#/artist/{{album.url_name}}">
+                            <i class="fa fa-2x fa-spotify">
+
+                            </i>
+                          </a>
+                        </div>
+
+                        <div class="list-item__image">
+                          <img ng-src="{{album.image}}"/>
+                        </div>
+
+                        <div class="list-item__name">
+                          <h5 class="color-primary">
+                            {{album.artist}}
+                          </h5>
+                          <h6>
+                            {{album.name}}
+                          </h6>
+                        </div>
+
+                        <div class="list-item__style">
+                          <div class="artist-genre" ng-repeat="genre in album.genre">
+                            <span>{{genre}}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                  </div>
+                </div>
+
+              </tab>
+              <tab heading="Discover songs">
+
+              </tab>
+
+            </tabset>
+          </div>
+        </section>
+      </section>
+
+      <section>
+
+        <section class="panel panel-default panel-default-clean">
+
+          <div class="panel-body">
+
             <h4>
-                Dashboard
+              Genres & Mood
             </h4>
-            <p>
-                Dashboard with different widgets and format
-            </p>
-        </div>
-        <div class="col-sm-6">
 
-            <div class="col-sm-6 text-right">
-                <p class="text-muted medium">
-                    1920 Visitors / week
+            <div data-ng-controller="GenresCtrl as genres">
+
+              <div class="row music-genres-listing">
+
+                <div data-ng-repeat="genre in GenresSrv.genres" class="col-md-3">
+
+                  <div class="list-item__wrap">
+
+                    <div class="list-item__play">
+                      <a class="list-item__play-button" ng-href="#/artist/{{genre.url_name}}">
+                        <i class="fa fa-2x fa-spotify">
+
+                        </i>
+                      </a>
+                    </div>
+
+                    <div class="list-item__image" style="background:url({{genre.image}});">
+                      <div class="list-item__name">
+                        <div class="genre-icon">
+                          <i class="{{genre.icon}}">
+
+                          </i>
+                        </div>
+                        <h5>
+                          <a href="#/artist/{{genre.url_name}}">{{genre.name}}</a>
+                        </h5>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </div>
+
+  </section>
+
+  <aside class="aside" id="sidebar">
+
+    <div class="aside-inner-fixed scrollable">
+      <div class="panel panel-default panel-transparent panel-default-clean">
+
+        <div class="panel-body">
+
+          <div class="now-playing">
+
+            <div class="now-playing__item">
+
+              <div class="now-playing__image">
+                <img src="dist/images/team1.jpg" alt="" class="img40_40 img-circle">
+              </div>
+
+              <div class="now-playing__name">
+                <h5>
+                  Jason Doezer
+                </h5>
+              </div>
+              <div class="now-playing__song">
+                <p class="text-muted">
+                  The lunatics - Come Together
                 </p>
-                <div data-ng-controller="sparklineCtrl">
-                    <span data-sparkline
-                          data-spark-data="simpleChart2long.sparkData"
-                          data-spark-options="simpleChart2long.sparkOptions"
-                            ></span>
-                </div>
-            </div>
-
-            <div class="col-sm-6 text-right">
-                <p class="text-muted medium">
-                    2065 buyers / week
+              </div>
+              <div class="now-playing__artist">
+                <p class="text-muted">
+                  <i class="musicicon-acoustic4"></i>  The lunatics
                 </p>
-                <div data-ng-controller="sparklineCtrl">
-                    <span data-sparkline
-                          data-spark-data="simpleChartlong.sparkData"
-                          data-spark-options="simpleChartlong.sparkOptions"
-                            ></span>
-                </div>
+              </div>
+
             </div>
 
+            <div class="now-playing__item">
+
+              <div class="now-playing__image">
+                <img src="dist/images/team2.jpg" alt="" class="img40_40 img-circle">
+              </div>
+
+              <div class="now-playing__name">
+                <h5>
+                  Greg Newpont
+                </h5>
+              </div>
+              <div class="now-playing__song">
+                <p class="text-muted">
+                  La fiesta negra - Trains over fall
+                </p>
+              </div>
+              <div class="now-playing__artist">
+                <p class="text-muted">
+                  <i class="musicicon-cornet3"></i>  La fiesta negra
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="divider"></div>
+
+          <div>
+
+            <h4>
+              More Friends
+            </h4>
+
+            <div class="friends-list">
+              <div class="friend-item">
+                <div class="friend-image">
+                  <img src="dist/images/team3.jpg" alt="" class="img40_40 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Philip Gragoline</h5>
+                </div>
+              </div>
+
+              <div class="friend-item">
+                <div class="friend-image">
+                  <img src="dist/images/team4.jpg" alt="" class="img40_40 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Christopher Factory</h5>
+                </div>
+              </div>
+
+              <div class="friend-item">
+                <div class="friend-image">
+                  <img src="dist/images/team5.jpg" alt="" class="img40_40 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Tony Banken</h5>
+                </div>
+              </div>
+
+              <div class="friend-item">
+                <div class="friend-image">
+                  <img src="dist/images/team6.jpg" alt="" class="img40_40 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Gregory Anderson</h5>
+                </div>
+              </div>
+
+              <div class="friend-item">
+                <div class="friend-image">
+                  <img src="dist/images/team2.jpg" alt="" class="img40_40 img-circle">
+                </div>
+                <div class="friend-name">
+                  <h5>Antony walshy</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="text-center">
+              <a class="btn btn-bordered btn-bordered-primary btn-block">Find more friends</a>
+            </div>
+
+          </div>
+
         </div>
+      </div>
     </div>
 
-</header>
-
-<div class="page page-dashboard" data-ng-controller="DashboardCtrl">
-
-<section>
-
-    <div class="row">
-
-        <div class="col-sm-8" data-ng-controller="flotChartCtrl">
-
-            <div class="panel panel-default">
-
-                <div class="panel-body">
-
-                    <div class="choices">
-
-                    </div>
-
-                    <div data-flot-chart
-                         data-data="line1.data"
-                         data-options="line1.options"
-                         style="width: 100%; height: 300px;"
-                            ></div>
-
-
-                </div>
-            </div>
-
-        </div>
-
-        <div class="col-sm-4" data-ng-controller="chartingCtrl">
-            <div>
-                <div class="panel panel-default">
-                    <!--<div class="panel-heading">
-                        <h3 class="panel-title">{{easypie1.name}}</h3>
-                    </div>-->
-                    <div class="panel-body text-center">
-
-                        <div class="pull-left">
-                            <div easypiechart options="easypiesmall1.options" percent="easypiesmall1.percent" class="easypiechartsmall">
-                                    <span class="pie-percent">
-                                        <div class="countTo_small" data-ng-controller="countTo">
-                                            <span count-to="{{countersmall1.countTo}}" value="{{countersmall1.countFrom}}" duration="2"></span>%
-                                        </div>
-
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="right-info">
-
-                            <p class="text-muted">Registrations / Unique visitors</p>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div class="panel panel-default">
-                    <!--<div class="panel-heading">
-                        <h3 class="panel-title">{{easypie2.name}}</h3>
-                    </div>-->
-                    <div class="panel-body text-center">
-
-
-                        <div class="pull-left">
-                            <div easypiechart options="easypiesmall2.options" percent="easypiesmall2.percent" class="easypiechartsmall">
-                                    <span class="pie-percent">
-                                         <div class="countTo_small" data-ng-controller="countTo">
-                                             <span count-to="{{countersmall2.countTo}}" value="{{countersmall2.countFrom}}" duration="2"></span>%
-                                         </div>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="right-info">
-                            <p class="text-muted">Sales / Registered user</p>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div class="panel panel-default">
-                    <!--<div class="panel-heading">
-                        <h3 class="panel-title">{{easypie3.name}}</h3>
-                    </div>-->
-                    <div class="panel-body text-center">
-
-
-                        <div class="pull-left">
-                            <div easypiechart options="easypiesmall3.options" percent="easypiesmall3.percent" class="easypiechartsmall">
-                                    <span class="pie-percent">
-                                         <div class="countTo_small" data-ng-controller="countTo">
-                                             <span count-to="{{countersmall3.countTo}}" value="{{countersmall3.countFrom}}" duration="2"></span>%
-                                         </div>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="right-info">
-                            <p class="text-muted">Dropouts on checkout</p>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-</section>
-
-<section>
-    <div class="row">
-
-        <div class="col-sm-12">
-
-            <div class="panel panel-default">
-
-                <div class="panel-body">
-
-                    <div class="text-left col-sm-6">
-                        <h3>
-                            Realtime performance feed
-                        </h3>
-                        <p class="text-muted medium">
-                            Updated on realtime based on a number of API calls
-                        </p>
-                    </div>
-
-                    <div class="panel-body col-sm-8" data-ng-controller="flotChartCtrl.realtime">
-
-                        <div data-flot-chart-realtime
-                             data-type="realtime"
-                             style="width: 100%; height: 300px;"
-                                ></div>
-                    </div>
-                    <div class="col-sm-4">
-
-                        <h4>
-                            Performance listing
-                        </h4>
-
-                        <div>
-                            <p class="text-muted medium">
-                                Overall CSS loading
-                                <span class="pull-right"> 60%</span>
-                            </p>
-                            <progressbar class="progressbar-xs no-margin" value="60" type="warning"></progressbar>
-                        </div>
-                        <br/>
-
-                        <div>
-                            <p class="text-muted medium">
-                                Overall Js loading time
-                                <span class="pull-right"> 35%</span>
-                            </p>
-                            <progressbar class="progressbar-xs no-margin" value="35" type="success"></progressbar>
-                        </div>
-                        <br/>
-
-                        <div>
-                            <p class="text-muted medium">
-                                Requests / user
-                                <span class="pull-right"> 92%</span>
-                            </p>
-                            <progressbar class="progressbar-xs no-margin" value="92" type="danger"></progressbar>
-                        </div>
-                        <br/>
-
-                        <div>
-                            <p class="text-muted medium">
-                                Caching requests
-                                <span class="pull-right"> 82%</span>
-                            </p>
-                            <progressbar class="progressbar-xs no-margin" value="82" type="info"></progressbar>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
-    </div>
-</section>
-
-
-<section>
-
-    <div class="row">
-        <div class="col-md-6">
-            <!-- List group -->
-            <div class="panel panel-default">
-                <div class="panel-heading"><strong><i class="fa fa-list panel-ico"></i>Todo items</strong></div>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <span class="badge">7</span>
-                        The industry's standard
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge badge-info">3</span>
-                        software like Aldus PageMaker
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge badge-warning">4</span>
-                        Various versions have evolved
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge badge-danger">3</span>
-                        There are many variations of passages
-                    </li>
-                    <li class="list-group-item">
-                        <span class="badge badge-success">10</span>
-                        Richard McClintock, a Latin professor
-                    </li>
-                </ul>
-            </div>
-            <!-- end List group -->
-        </div>
-
-        <div class="col-sm-6">
-
-            <section class="panel panel-box">
-                <div class="panel-top bg-weather bg-cloudy">
-                    <div class="text-left">
-                        Cloudy
-                    </div>
-                    <div class="divider divider-xl"></div>
-                    <div class="divider divider-lg"></div>
-                </div>
-                <div class="panel-icon bg-weather">
-                    <i class="wi wi-day-cloudy"></i>
-                </div>
-                <div class="panel-bottom bg-reverse">
-                    <ul class="list-justified text-center">
-                        <li>
-                            <p class="size-h2 color-info"><i class="wi wi-cloudy"></i></p>
-                            <p class="text-muted">Tuesday</p>
-                        </li>
-                        <li>
-                            <p class="size-h2 color-warning"><i class="wi wi-day-thunderstorm"></i></p>
-                            <p class="text-muted">Wednesday</p>
-                        </li>
-                        <li>
-                            <p class="size-h2 color-danger"><i class="wi wi-day-snow"></i></p>
-                            <p class="text-muted">Thursday</p>
-                        </li>
-                        <li>
-                            <p class="size-h2 color-success"><i class="wi wi-day-sunny"></i></p>
-                            <p class="text-muted">Friday</p>
-                        </li>
-                    </ul>
-                    <br/>
-                    <p class="text-center small">
-                        @ 2014 - Information provided by the weather information science
-                    </p>
-                </div>
-            </section>
-
-        </div>
-
-    </div>
-</section>
-
-
-<section>
-
-    <div class="row">
-
-
-        <div class="col-sm-6" ng-controller="morrisChartCtrl">
-
-            <section class="panel panel-default">
-                <div class="panel-body">
-                    <div morris-chart
-                         data-data="comboData"
-                         data-type="area"
-                         data-xkey="year"
-                         data-ykeys='["a", "b", "c"]'
-                         data-labels='["Value A", "Value B", "Value C"]'
-                         data-line-colors='["#383d43","#db5031","#c1bfc0"]'
-                         data-line-width="3"
-                            ></div>
-                </div>
-            </section>
-
-        </div>
-
-        <div class="col-sm-6" ng-controller="morrisChartCtrl">
-            <section class="panel panel-default">
-                <!--<div class="panel-heading"><i class="fa fa-list panel-ico"></i>Line Chart</div>-->
-                <div class="panel-body">
-                    <div morris-chart
-                         data-data="comboData"
-                         data-type="line"
-                         data-xkey="year"
-                         data-ykeys='["a", "b", "c"]'
-                         data-labels='["Value A", "Value B", "Value C"]'
-                         data-line-colors='["#383d43","#db5031","#c1bfc0"]'
-                         data-line-width="3"
-                            ></div>
-                </div>
-            </section>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<div class="panel panel-default">
-    <!--<div class="panel-heading"><strong><i class="fa fa-list panel-ico"></i>Table</strong></div>-->
-    <div class="panel-body table-responsive">
-        <table class="table">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Task</th>
-                <th>Completion</th>
-                <th>Assigned to</th>
-                <th>Completion %</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>1</td>
-                <td><span class="color-success"><i class="fa fa-level-up"></i></span> TWLT</td>
-                <td><span class="label label-info">Pending</span></td>
-                <td>John Doe</td>
-                <td><progressbar class="progressbar-xs no-margin" value="55"></progressbar>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td><span class="color-success"><i class="fa fa-level-up"></i></span> A16Z</td>
-                <td><span class="label label-primary">Due</span></td>
-                <td>Carol Simmerman</td>
-                <td><progressbar class="progressbar-xs no-margin" value="34" type="success"></progressbar></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td><span class="color-warning"><i class="fa fa-level-down"></i></span> DARK</td>
-                <td><span class="label label-success">Due</span></td>
-                <td>Joselie Hanna</td>
-                <td><progressbar class="progressbar-xs no-margin" value="68" type="info"></progressbar></td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td><span class="color-info"><i class="fa fa-level-up"></i></span> Q300</td>
-                <td><span class="label label-danger">Blocked</span></td>
-                <td>Johane Bayer</td>
-                <td><progressbar class="progressbar-xs no-margin" value="52" type="warning"></progressbar></td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td><span class="color-danger"><i class="fa fa-level-down"></i></span> RVNG</td>
-                <td><span class="label label-warning">Suspended</span></td>
-                <td>Donnavon Franklin</td>
-                <td><progressbar class="progressbar-xs no-margin" value="77" type="danger"></progressbar></td></td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td><span class="color-info"><i class="fa fa-level-down"></i></span> FDSA</td>
-                <td><span class="label label-info">Suspended</span></td>
-                <td>Jane Modrid</td>
-                <td><progressbar class="progressbar-xs no-margin" value="55" type="success"></progressbar></td></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+  </aside>
 
 </div>
   

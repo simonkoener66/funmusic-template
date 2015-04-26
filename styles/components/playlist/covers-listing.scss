@@ -55,6 +55,12 @@
     }
   }
 
+  &.minified .list-item__style {
+    .artist-genre {
+      display:none;
+    }
+  }
+
   .list-item__play {
     position: absolute;
     width: 100%;

@@ -1,5 +1,8 @@
 .music-listing--queue {
-  padding:10px;
+  padding:15px;
+  padding-top:0px;
+  padding-left:0;
+  padding-right:0;
 
   .music-listing__header {
     margin-bottom: 10px;
@@ -30,18 +33,18 @@
       margin-bottom: 3px;
       padding-bottom: 3px;
       margin-top: 3px;
-      padding-top: 3px;
+      padding-top: 6px;
       color:white;
     }
 
     .music-listing__number {
       float:left;
-      width:25px;
-      height:25px;
-      line-height: 25px;
+      width:40px;
+      height:30px;
+      line-height: 30px;
       text-align:center;
       position:relative;
-      margin-right:10px;
+      display:none;
 
       .play-button {
         position:absolute;
@@ -55,7 +58,10 @@
 
     .music-listing__thumbnail {
       float:left;
-      margin-right:10px;
+      margin:{
+        right:10px;
+        left:10px;
+      }
 
       img {
         width:30px;
@@ -109,5 +115,22 @@
       background-color: $color--secondary-light;
       @include border-radius(4px);
     }
+  }
+}
+
+.empty-listing {
+
+  text-align:center;
+  color:$color--gray;
+  padding: 20px;
+
+  .empty-listing-icon {
+    font-size:40px;
+  }
+
+  .empty-listing-message {
+    margin-top:20px;
+    font-size:13px;
+    color:$color--gray;
   }
 }

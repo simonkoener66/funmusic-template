@@ -2,8 +2,8 @@
 * Navigation style - normal
 */
 
-.slimScrollDiv {
-  max-height:70%;
+.slimScrollDiv .minified {
+  max-height:60%;
 }
 
 #nav-container {
@@ -11,8 +11,8 @@
   position: absolute;
   top: 0px;
   bottom: 0;
-  left: -270px;
-  width: 270px;
+  left: -240px;
+  width: 240px;
   padding: 0;
   background:$color--secondary;
   -webkit-overflow-scrolling: touch;
@@ -42,8 +42,8 @@
 
 .sidebar-nav-switch {
   margin: auto;
-  width: 90%;
-  padding-top: 20px;
+  width: 100%;
+  padding-top: 0px;
   z-index: 10;
   background: $color--secondary;
 
@@ -87,9 +87,8 @@
   }
 
   .sidebar-nav-content {
-    margin: 0 10px 10px 10px;
+    margin: 0;
     padding-bottom: 10px;
-    border-bottom: solid 1px rgba(57,63,79,0.4);
 
     .sidebar-nav-content__header {
       color:$color--secondary-light;
@@ -102,6 +101,10 @@
       margin-bottom:10px;
       font-size:90%;
     }
+  }
+
+  .sidebar-nav-content:nth-last-child(1){
+    padding-bottom: 20px;
   }
 
   .sidebar-nav-menu{
@@ -118,15 +121,33 @@
         height: 30px;
         padding: 0 10px;
         font-size: 12px;
-        color: #f1f2f4;
-        @include border-radius(4px);
+        @include border-radius(0px);
+        color: $color--gray;
+        border-left:3px solid transparent;
+
+        .label {
+          color: $color--gray;
+        }
       }
 
-      .nav-link:hover,
+      .nav-link:hover {
+        text-decoration:none;
+        color: white;
+
+        .label {
+          color: white;
+        }
+      }
+
       &.active .nav-link {
         background-color: $color--secondary-light;
-        color: #fff;
+        color: white;
         text-decoration: none;
+        border-left:3px solid $color--primary;
+
+        .label {
+          color: white;
+        }
       }
 
       .nav-link .icon,
@@ -140,7 +161,7 @@
       .nav-link .icon {
         width: 16px;
         margin-right: 10px;
-        font-size: 12px;
+        font-size: 14px;
         text-align: center;
       }
     }

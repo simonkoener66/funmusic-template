@@ -1,18 +1,18 @@
 <div data-ng-controller="ArtistCtrl as artist">
 
-  <div class="artist-banner" du-parallax y="background" custom="parallax" style="background-image:url({{artist.artistBanner}});">
+  <div class="artist-banner" du-parallax y="background" custom="parallax" style="background-image:url({{artistBanner}});">
     <div class="artist-inner">
 
       <div class="artist-img">
-        <img src="{{artist.artistImage}}" class="img-circle img-polaroid"/>
+        <img src="{{artistImage}}" class="img-circle img-polaroid"/>
       </div>
 
       <h3>
-        {{artist.artistName}}
+        {{artistName}}
       </h3>
 
       <div class="artist-style">
-        <div class="artist-genre" ng-repeat="genre in artist.artistGenre">
+        <div class="artist-genre" ng-repeat="genre in artistGenre">
           <span>{{genre}}</span>
         </div>
       </div>
@@ -81,7 +81,7 @@
 
               <div class="music-listing__songs">
 
-                <div class="music-listing__row" ng-repeat="song in artist.artistPlaylist | filter:searchText">
+                <div class="music-listing__row" ng-repeat="song in artistPlaylist | filter:searchText">
 
                   <div class="music-listing__number">
                     {{ $index+1 }}
@@ -92,7 +92,22 @@
 
                   <div class="music-listing__row-actions">
                     <i class="fa fa-heart action" title="Add to Favorites"></i>
-                    <i class="fa fa-book action" title="Add to..."></i>
+                    <div class="btn-group">
+                      <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <i class="fa fa-book action"></i>
+                      </a>
+
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="javascript:;" data-ng-click="generalPlaylist.createNewPlaylist(song)">New Playlist</a></li>
+                        <li class="divider"></li>
+
+                        <li id="user-menu" class="nav-item" ng-repeat="playlist_list in generalPlaylist.userPlaylists track by $index">
+                          <a href="javascript:;" data-ng-click="artist.addSongToPlaylist(song,playlist_list.name)">
+                            {{playlist_list.name}}
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                     <i class="fa fa-retweet action" title="Share to Feed"></i>
                     <i class="fa fa-list action" title="More Options..."></i>
                   </div>
@@ -176,7 +191,7 @@
 
               <div class="related-item">
                 <div class="item-image">
-                  <img src="http://assets.rollingstone.com/assets/images/artists/the-beatles.jpg" class="img40_40"/>
+                  <img src="dist/images/artists/artist1.jpg" class="img40_40"/>
                 </div>
                 <div class="item-name">
                   <h5>
@@ -186,7 +201,7 @@
               </div>
               <div class="related-item">
                 <div class="item-image">
-                  <img src="http://www.jasonderulo.com/sites/g/files/g2000001586/f/efc9a25503ee7750f48dca03156a5daf.jpg" class="img40_40"/>
+                  <img src="dist/images/artists/artist2.jpg" class="img40_40"/>
                 </div>
                 <div class="item-name">
                   <h5>
@@ -196,7 +211,7 @@
               </div>
               <div class="related-item">
                 <div class="item-image">
-                  <img src="http://ultimatechart.com/system/artists/Aloe_Blacc.jpg" class="img40_40"/>
+                  <img src="dist/images/artists/artist3.jpg" class="img40_40"/>
                 </div>
                 <div class="item-name">
                   <h5>
@@ -206,7 +221,7 @@
               </div>
               <div class="related-item">
                 <div class="item-image">
-                  <img src="http://s2.vagalume.com/pharrell-williams/images/g32296.jpg" class="img40_40"/>
+                  <img src="dist/images/artists/artist4.jpg" class="img40_40"/>
                 </div>
                 <div class="item-name">
                   <h5>
@@ -228,7 +243,13 @@
 
               <a class="btn-tag" href="javascript:;">Music</a>
               <a class="btn-tag" href="javascript:;">Country</a>
-              <a class="btn-tag" href="javascript:;">British folk</a>
+              <a class="btn-tag" href="javascript:;">British classic folk</a>
+              <a class="btn-tag" href="javascript:;">Electric song</a>
+              <a class="btn-tag" href="javascript:;">Mood Fire</a>
+              <a class="btn-tag" href="javascript:;">House</a>
+              <a class="btn-tag" href="javascript:;">Groove melody</a>
+              <a class="btn-tag" href="javascript:;">Tuning</a>
+              <a class="btn-tag" href="javascript:;">Street songs</a>
 
             </div>
           </div>

@@ -1,0 +1,67 @@
+.page.page-full {
+  padding: 0px;
+  background-color:white;
+}
+
+#content.fixed {
+  overflow: hidden;
+  height: 100%;
+
+  .page-full,.page {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  .inner-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: table;
+    width: 100%;
+
+    .inner-page {
+      position:absolute;
+      top:0;
+      bottom:60px;
+      display:block;
+    }
+  }
+
+}
+
+.two-column {
+
+  .inner-page {
+    background:white;
+    padding:0px;
+  }
+
+  @media (min-width: 768px) {
+
+    display: table;
+    table-layout: fixed;
+    border-spacing: 0;
+    width: 100%;
+
+    aside, & > section {
+      display: table-cell;
+      vertical-align: top;
+      height: 100%;
+      float: none;
+    }
+
+    .aside {
+      width: 270px;
+      background:$color--background;
+      position:relative;
+
+      .aside-inner-fixed {
+        position: absolute;
+        top: 0;
+        bottom: 80px;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -11,11 +11,16 @@ angular.module("app.controllers", []).controller("AdminAppCtrl", ["$scope", "$lo
 
     };
 
+    $scope.checkIfFixedPage = function () {
+
+      return _.contains(["/dashboard"], $location.path());
+
+    };
+
     $scope.info = {
       theme_name: "Kimono",
       user_name: "Jane Doe"
     };
-
 
   }
 ]).controller("NavCtrl", ['navigationMenuService',
@@ -747,32 +752,43 @@ angular.module('app.music', ['mediaPlayer'])
 
       };
 
-    }]).controller('ArtistListingCtrl',['ArtistListingSrv',
-    function(ArtistListingSrv){
+    }]).controller('ArtistListingCtrl',['$scope','ArtistListingSrv',
+    function($scope,ArtistListingSrv){
 
-      this.artistsList = ArtistListingSrv.artists;
+      $scope.ArtistsSrv = ArtistListingSrv;
 
-    }]).controller('AlbumsCtrl',['AlbumsListingSrv',
-    function(AlbumsListingSrv){
+      ArtistListingSrv.getArtists(function(data){
+        // no need to read data because its binded to $scope.AlbumsSrv
+        // You can however process something only after the data comes back
+      });
 
-      this.albumsList = AlbumsListingSrv.albums;
+    }]).controller('AlbumsCtrl',['$scope','AlbumsListingSrv',
+    function($scope,AlbumsListingSrv){
+
+      $scope.AlbumsSrv = AlbumsListingSrv;
+
+      AlbumsListingSrv.getAlbums(function(data){
+        // no need to read data because its binded to $scope.AlbumsSrv
+        // You can however process something only after the data comes back
+      });
+
 
     }]).controller('GenresCtrl',['$scope','GenresListingSrv',
     function($scope,GenresListingSrv){
 
-      $scope.genresList = GenresListingSrv.genres;
+      $scope.GenresSrv = GenresListingSrv;
 
       GenresListingSrv.getGenres(function(data){
-        $scope.genresList = data;
+        // no need to read data because its binded to $scope.GenresSrv
+        // You can however process something only after the data comes back
       });
 
 
-    }]).controller('ArtistCtrl', ['$scope','$routeParams', 'ArtistSrv', 'navigationMenuService',
-    function ($scope,$routeParams, ArtistSrv, navigationMenuService) {
+    }]).controller('ArtistCtrl', ['$scope','$routeParams', 'ArtistSrv','PlayListSrv', 'navigationMenuService',
+    function ($scope,$routeParams, ArtistSrv,PlayListSrv, navigationMenuService) {
 
       this.ArtistSrv = ArtistSrv;
-      var artistPlaylistVar = [],
-        artistTitle, artistImage, artistBanner, artistGenre;
+      var artistPlaylistVar = [];
 
       ArtistSrv.getArtist($routeParams.title, function (response) {
 
@@ -791,20 +807,16 @@ angular.module('app.music', ['mediaPlayer'])
             });
           });
 
-          artistTitle = response.name;
-          artistImage = response.image;
-          artistBanner = response.banner;
-          artistGenre = response.genre;
+          $scope.artistName = response.name;
+          $scope.artistImage = response.image;
+          $scope.artistBanner = response.banner;
+          $scope.artistGenre = response.genre;
 
         }
 
       });
 
-      this.artistPlaylist = artistPlaylistVar;
-      this.artistName = artistTitle;
-      this.artistImage = artistImage;
-      this.artistBanner = artistBanner;
-      this.artistGenre = artistGenre;
+      $scope.artistPlaylist = artistPlaylistVar;
 
 
       this.addSongs = function (playlist, callback) {
@@ -836,6 +848,11 @@ angular.module('app.music', ['mediaPlayer'])
 
         });
 
+      };
+
+      this.addSongToPlaylist = function(song,playlist){
+
+        PlayListSrv.addSongToPlaylist(song,playlist);
       };
 
     }]).controller('UserPlayListCtrl', ['$routeParams', 'PlayListSrv', 'navigationMenuService',

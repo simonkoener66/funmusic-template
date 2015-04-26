@@ -25,3 +25,21 @@
   opacity: 1 !important;
   right: 0px !important;
 }
+
+.page {
+  .slimScrollBar {
+    background:$color--gray-light !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background:$color--gray-light;
+    border-radius: 0px !important;
+    width: 4px !important;
+    right: 0px !important;
+  }
+}
+
+.scrollable {
+  overflow-x:hidden;
+  overflow-y:auto;
+}

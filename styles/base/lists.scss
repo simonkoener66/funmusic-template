@@ -33,6 +33,23 @@
   a {
     display:inline-block;
     margin-right:3px;
-    margin-top:3px;
+    margin-top:6px;
+  }
+}
+
+.friends-list {
+
+  .friend-item {
+    margin: {
+      bottom:10px;
+    }
+  }
+
+  .friend-image {
+    display:inline-block;
+    margin-right:10px;
+  }
+  .friend-name {
+    display:inline-block;
   }
 }
