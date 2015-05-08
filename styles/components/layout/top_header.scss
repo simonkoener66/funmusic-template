@@ -4,14 +4,14 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 65px;
   background:white;
   position:relative;
 }
 
 @media (min-width: 768px) {
   .top-header {
-    height: 80px;
+    height: 65px;
   }
 }
 
@@ -73,6 +73,7 @@
 
 .top-header .dropdown-menu.panel .panel-heading {
   background: #ffffff;
+  color:$color--text;
 }
 
 .top-header .dropdown-menu.panel .panel-heading, .top-header .dropdown-menu.panel .panel-footer {
@@ -111,14 +112,13 @@
   font-size: 18px;
   line-height: 22px;
   margin-right: 40px;
-  margin-top: 15px;
+  margin-top: 8px;
 }
 
 .top-header .top-nav .nav-button {
   font-size: 18px;
   line-height: 22px;
-  margin-right: 0px;
-  margin-top: 15px;
+  margin-top: 8px;
 }
 
 .top-header .top-nav .nav-left > li, .top-header .top-nav .nav-right > li {
@@ -167,6 +167,10 @@
   i {
     font-size:15px;
   }
+}
+
+.header-actions {
+  margin-right:40px;
 }
 
 @media (min-width: 768px) {
@@ -233,7 +237,7 @@
 
 .top-header .top-nav .list-notifications {
 
-  .list-notifications__item a {
+  .list-notifications__item > a {
 
     text-align: center;
     width: 35px;
@@ -270,13 +274,34 @@
 
   padding: 10px 0 10px 15px;
   line-height: 30px;
+  display:inline-block;
 
   & > a{
     width: auto;
-    padding: 6px 12px;
+    padding: 6px 4px;
     height: auto;
     line-height: 20px;
     margin-top: 8px;
+    position:relative;
+
+    & > i {
+      color:$color--secondary;
+      position:relative;
+    }
+
+    &.online:before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      display: block;
+      position: absolute;
+      top: 8px;
+      right: 2px;
+      border: 1px solid white;
+      z-index: 1;
+      background:$color--primary;
+      @include border-radius(100%);
+    }
   }
 }
 
@@ -311,4 +336,23 @@
   position: absolute;
   top: 2px;
   left: 15px;
+}
+
+.top-header .nav-profile {
+  margin-right:10px;
+
+  .dropdown-menu.panel {
+
+    .list-group-item {
+      padding:10px 25px;
+
+      .media{
+        i {
+          color:$color--gray-light;
+          margin-right: 20px;
+          font-size: 17px;
+        }
+      }
+    }
+  }
 }

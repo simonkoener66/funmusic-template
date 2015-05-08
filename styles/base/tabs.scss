@@ -3,6 +3,10 @@
   @include border-radius(0px);
 }
 
+.nav-tabs {
+  border-bottom:none;
+}
+
 .ui-tab-container .ui-tab .nav-tabs {
   margin-bottom: 0;
 }
@@ -94,9 +98,26 @@
   cursor: pointer;
 }
 
-.nav-tabs>li.active>a,
-.nav-tabs>li.active>a:focus,
-.nav-tabs>li.active>a:hover {
-  border:none;
-  border-bottom:2px solid $color--primary;
+.ui-tab {
+  .nav-tabs>li.active>a,
+  .nav-tabs>li.active>a:focus,
+  .nav-tabs>li.active>a:hover {
+    border:none;
+    border-bottom:3px solid $color--primary;
+    background:transparent;
+  }
+
+  .nav-tabs>li>a,
+  .nav-tabs>li>a:focus,
+  .nav-tabs>li>a:hover {
+    background:transparent;
+    border:none;
+  }
+
+  .nav-tabs>li>a:focus,
+  .nav-tabs>li>a:hover {
+    background:transparent;
+    border:none;
+    border-bottom:3px solid $color--gray-light;
+  }
 }

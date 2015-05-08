@@ -13,27 +13,22 @@
 
             <div class="list-item__wrap">
 
-              <div class="list-item__play">
-                <a class="list-item__play-button" ng-href="#/artist/{{genre.url_name}}">
-                  <i class="fa fa-2x fa-spotify">
+              <a href="#/artist/{{genre.url_name}}">
+                <div class="list-item__image">
+                  <img ng-src="{{genre.image}}" alt="genre image"/>
+                  <div class="list-item__name">
+                    <div class="genre-icon">
+                      <i class="{{genre.icon}}">
 
-                  </i>
-                </a>
-              </div>
-
-              <div class="list-item__image" style="background:url({{genre.image}});">
-                <div class="list-item__name">
-                  <div class="genre-icon">
-                    <i class="{{genre.icon}}">
-
-                    </i>
+                      </i>
+                    </div>
+                    <h5>
+                      {{genre.name}}
+                    </h5>
                   </div>
-                  <h5>
-                    <a href="#/artist/{{genre.url_name}}">{{genre.name}}</a>
-                  </h5>
-                </div>
 
-              </div>
+                </div>
+              </a>
             </div>
 
           </div>

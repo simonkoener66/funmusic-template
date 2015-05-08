@@ -25,16 +25,16 @@
 
             <div class="list-item__wrap">
 
-              <div class="list-item__play">
-                <a class="list-item__play-button" ng-href="#/artist/{{artistItem.url_name}}">
-                  <i class="fa fa-2x fa-spotify">
-
-                  </i>
-                </a>
-              </div>
 
               <div class="list-item__image">
                 <img ng-src="{{artistItem.image}}"/>
+                <div class="list-item__play">
+                  <a class="list-item__play-button" ng-href="#/artist/{{artistItem.url_name}}">
+                    <i class="fa fa-2x fa-spotify">
+
+                    </i>
+                  </a>
+                </div>
               </div>
 
               <div class="list-item__name">
@@ -45,7 +45,7 @@
 
               <div class="list-item__style">
                 <div class="artist-genre" ng-repeat="genre in artistItem.genre">
-                  <span>{{genre}}</span>
+                  <span class="btn-tag">{{genre}}</span>
                 </div>
               </div>
             </div>

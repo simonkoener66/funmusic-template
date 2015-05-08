@@ -3,14 +3,17 @@
  Initialize the Angular App
  **************************/
 
-var app = angular.module("app", ["ngRoute", "ngAnimate","app.config", "ui.bootstrap", "mgo-angular-wizard", "ui.tree", "ngMap", "ngTagsInput", "app.ui.ctrls", "app.ui.services", "app.controllers", "app.directives", "app.form.validation", "app.ui.form.ctrls", "app.ui.form.directives", "app.tables", "app.map", "app.task","countTo", "mediaPlayer", "app.music"]).run(["$rootScope", "$location",
-    function ($rootScope, $location) {
+var app = angular.module("app", ["ngRoute", "ngAnimate","app.config", "ui.bootstrap", "mgo-angular-wizard", "ui.tree", "ngMap", "ngTagsInput", "app.ui.ctrls", "app.ui.services", "app.controllers", "app.directives", "app.form.validation", "app.ui.form.ctrls", "app.ui.form.directives", "app.tables", "app.map", "countTo", "mediaPlayer", "app.music"]).run(["$rootScope", "$location","loggit",
+    function ($rootScope, $location,loggit) {
 
         $(document).ready(function(){
 
             setTimeout(function(){
                 $('.page-loading-overlay').addClass("loaded");
                 $('.load_circle_wrapper').addClass("loaded");
+
+                loggit.logSuccess("Welcome to Groovy! Navigate and add songs to your playlists.");
+
             },1000);
 
         });
@@ -18,7 +21,7 @@ var app = angular.module("app", ["ngRoute", "ngAnimate","app.config", "ui.bootst
     }] ).config(["$routeProvider",
     function($routeProvider) {
         return $routeProvider.when("/", {
-            redirectTo: "ui/widgets"
+            redirectTo: "/dashboard"
         }).when("/dashboard", {
                 templateUrl: "app/views/dashboards/dashboard.html"
             }).when("/dashboard/dashboard", {
@@ -95,8 +98,6 @@ var app = angular.module("app", ["ngRoute", "ngAnimate","app.config", "ui.bootst
                 templateUrl: "app/views/pages/blank.html"
             }).when("/pages/contact", {
                 templateUrl: "app/views/pages/contact.html"
-            }).when("/tasks", {
-                templateUrl: "app/views/tasks/tasks.html"
             }).otherwise({
                 redirectTo: "/404"
             });

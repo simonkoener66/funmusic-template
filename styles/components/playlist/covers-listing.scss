@@ -20,16 +20,31 @@
 .music-covers-listing {
 
   .list-item__wrap {
-    margin-bottom:20px;
+    margin-bottom:40px;
   }
 
   .list-item__image {
+
+    position:relative;
+    z-index:1;
+    @include border-radius(2px);
+    overflow:hidden;
 
     img {
       width:100%;
       max-width:100%;
       height:auto;
-      @include border-radius(2px);
+    }
+
+    &:before {
+      content:"";
+      position:absolute;
+      top:0px;
+      left:0px;
+      background:rgba(0,0,0,0.4);
+      display:block;
+      width:100%;
+      height:100%;
     }
   }
 
@@ -38,12 +53,12 @@
   }
 
   .list-item__style {
+    margin: {
+      top:15px;
+    }
+
     .artist-genre {
       display: inline-block;
-      padding: 2px 5px;
-      font-size:11px;
-      background: $color--gray-light;
-      @include border-radius(2px);
 
       margin: {
         right: 5px;
@@ -56,6 +71,7 @@
   }
 
   &.minified .list-item__style {
+
     .artist-genre {
       display:none;
     }
@@ -65,11 +81,13 @@
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 30%;
+    top: 40%;
     left: 0;
+    height:10%;
     display:block;
     visibility:hidden;
     opacity:0;
+    z-index:2;
     @include transition(all 0.3s ease-out);
 
     .list-item__play-button {

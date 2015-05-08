@@ -78,6 +78,14 @@ module.exports = function(grunt) {
                   cwd: 'app/data',
                   src: ['*.*'],
                   dest: 'dist/data'
+                },
+                {
+                  //for Underscore source map
+                  expand: true,
+                  dot: true,
+                  cwd: 'bower_components/underscore',
+                  src: ['*.map'],
+                  dest: 'dist/js'
                 }]
             }
         },

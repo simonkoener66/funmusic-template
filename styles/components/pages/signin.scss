@@ -1,8 +1,9 @@
-
+.logo-signin {
+  margin-top:20px;
+}
 
 .page-signin .signin-header, .page-signup .signin-header, .page-forgot .signin-header {
   padding: 25px 0;
-  background-color: #fff;
   border-top: 2px solid $color--primary;
 }
 
@@ -39,6 +40,10 @@
 .page-signin .form-container, .page-signup .form-container, .page-forgot .form-container {
   max-width: 420px;
   margin: 10px auto;
+  @include box-shadow( 0px 0px 2px 1px $color--gray-light);
+  border-radius: 2px;
+  padding: 60px;
+  background: white;
 }
 
 .page-signin .line-thru, .page-signup .line-thru, .page-forgot .line-thru {

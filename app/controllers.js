@@ -39,93 +39,14 @@ angular.module("app.controllers", []).controller("AdminAppCtrl", ["$scope", "$lo
     };
 
   }
-]);
+]).controller("ActionsCtrl", ['$scope',function ($scope) {
 
-
-/*
- App tasks controllers
- Main task controllers (includes saving tasks into localStorage)
- */
-
-angular.module("app.task", []).factory("taskStorage",
-  function () {
-
-    /**************************
-     Saves and loads tasks from the localStorage
-     **************************/
-
-    var DEMO_TASKS, STORAGE_ID;
-    return STORAGE_ID = "tasks",
-      DEMO_TASKS = '[ ' +
-      '{"title": "Call customer X", "completed": true}, ' +
-      '{"title": "Review marketing system", "completed": true}, ' +
-      '{"title": "Do the twist!", "completed": false}, ' +
-      '{"title": "Watch over the mars scheme", "completed": false}, ' +
-      '{"title": "Complete proposal for spaceship", "completed": false}, ' +
-      '{"title": "Do inventory of everything", "completed": false} ]', {
-      get: function () {
-        return JSON.parse(localStorage.getItem(STORAGE_ID) || DEMO_TASKS);
-      },
-      put: function (tasks) {
-        return localStorage.setItem(STORAGE_ID, JSON.stringify(tasks));
-      }
+    this.toggleChat = function () {
+      $('.chat-bar').toggleClass("visible");
     };
-  }).controller("taskCtrl", ["$scope", "taskStorage", "filterFilter", "$rootScope", "loggit",
-    function ($scope, taskStorage, filterFilter, $rootScope, loggit) {
-      var tasks;
-      return tasks = $scope.tasks = taskStorage.get(),
-        $scope.newTask = "",
-        $scope.countTasksLeft = filterFilter(tasks, {
-          completed: !1
-        }).length, $scope.editedTask = null, $scope.statusFilter = {
-        completed: !1
-      }, $scope.filter = function (filterType) {
-        switch (filterType) {
-          case "all":
-            $scope.statusFilter = "";
-            break;
-          case "active":
-            $scope.statusFilter = {
-              completed: !1
-            };
-            break;
-          case "completed":
-            $scope.statusFilter = {
-              completed: !0
-            };
-            break;
-        }
-      }, $scope.add = function () {
-        var newTask;
-        return newTask = $scope.newTask.trim(), 0 !== newTask.length ? (tasks.push({
-          title: newTask,
-          completed: !1
-        }), loggit.logSuccess('New task added : "' + newTask + '"'), taskStorage.put(tasks), $scope.newTask = "", $scope.countTasksLeft++) : void 0;
-      }, $scope.edit = function (task) {
-        $scope.editedTask = task;
-      }, $scope.doneEditing = function (task) {
-        return $scope.editedTask = null, task.title = task.title.trim(), task.title ? loggit.log("Task was updated") : $scope.remove(task), taskStorage.put(tasks);
-      }, $scope.remove = function (task) {
-        var index;
-        return $scope.countTasksLeft -= task.completed ? 0 : 1, index = $scope.tasks.indexOf(task), $scope.tasks.splice(index, 1), taskStorage.put(tasks), loggit.logError("Task was removed");
-      }, $scope.completed = function (task) {
-        return $scope.countTasksLeft += task.completed ? -1 : 1, taskStorage.put(tasks), task.completed ? $scope.countTasksLeft > 0 ? loggit.log(1 === $scope.countTasksLeft ? "Only " + $scope.countTasksLeft + " task left" : "Well done! Only " + $scope.countTasksLeft + " tasks left") : loggit.logSuccess("Yay!! All tasks are done :)") : void 0;
-      }, $scope.clearCompleted = function () {
-        return $scope.tasks = tasks = tasks.filter(function (val) {
-          return !val.completed;
-        }), taskStorage.put(tasks);
-      }, $scope.markAll = function (completed) {
-        return tasks.forEach(function (task) {
-          task.completed = completed;
-        }), $scope.countTasksLeft = completed ? 0 : tasks.length, taskStorage.put(tasks), completed ? loggit.logSuccess("Yay!! All tasks are done :)") : void 0;
-      }, $scope.$watch("countTasksLeft == 0", function (val) {
-        $scope.allChecked = val;
-      }), $scope.$watch("countTasksLeft", function (newVal) {
-        $rootScope.$broadcast("taskRemaining:changed", newVal);
-      });
-    }
-  ]);
 
+  }
+]);
 
 /*
  App Form validations
@@ -784,39 +705,84 @@ angular.module('app.music', ['mediaPlayer'])
       });
 
 
-    }]).controller('ArtistCtrl', ['$scope','$routeParams', 'ArtistSrv','PlayListSrv', 'navigationMenuService',
-    function ($scope,$routeParams, ArtistSrv,PlayListSrv, navigationMenuService) {
+    }]).controller('ArtistCtrl', ['$scope','$routeParams', 'ArtistSrv','PlayListSrv', 'navigationMenuService','loggit',
+    function ($scope,$routeParams, ArtistSrv,PlayListSrv, navigationMenuService,loggit) {
 
       this.ArtistSrv = ArtistSrv;
-      var artistPlaylistVar = [];
+      var artistPlaylistVar = [],
+        artistPlaylistAlbums = [];
+
+
+      this.AlbumList = true;
+      this.FullList = false;
+      this.following = "Follow artist";
+      this.following_class = "btn-default";
+
+      this.follow = function(){
+
+        this.following = "Following";
+        this.following_class = "btn-primary";
+
+        loggit.logSuccess('Yaay!! You are now following this artist');
+
+      };
 
       ArtistSrv.getArtist($routeParams.title, function (response) {
 
-        if (typeof response.songs != "undefined") {
+        if(typeof response.albums != "undefined"){
 
-          _.map(response.songs, function (song) {
-            var parseTitle = song.displayName.match(/(.*?)\s?-\s?(.*)?$/);
-            artistPlaylistVar.push({
-              image: song.image,
-              src: song.url,
-              url: song.url,
-              type: 'audio/ogg',
-              artist: parseTitle[1],
-              title: parseTitle[2],
-              displayName:song.displayName
+          _.map(response.albums, function (album) {
+
+            artistPlaylistAlbums.push({
+              album_name: album.album_name,
+              album_image: album.album_image,
+              album_release: album.album_release,
+              songs:[]
             });
+
+            _.map(album.songs, function (song) {
+
+              /*Put them all together in one single list (for adding to new playlists for example)*/
+
+              var parseTitle = song.displayName.match(/(.*?)\s?-\s?(.*)?$/);
+
+              artistPlaylistVar.push({
+                image: song.image,
+                src: song.url,
+                url: song.url,
+                type: 'audio/ogg',
+                artist: parseTitle[1],
+                title: parseTitle[2],
+                displayName:song.displayName
+              });
+
+              /*Put songs also in this artist ordered by album*/
+
+              artistPlaylistAlbums[artistPlaylistAlbums.length - 1].songs.push({
+                image: song.image,
+                src: song.url,
+                url: song.url,
+                type: 'audio/ogg',
+                artist: parseTitle[1],
+                title: parseTitle[2],
+                displayName:song.displayName
+              });
+            });
+
           });
 
           $scope.artistName = response.name;
           $scope.artistImage = response.image;
           $scope.artistBanner = response.banner;
           $scope.artistGenre = response.genre;
+          $scope.artistAbout = response.about;
 
         }
 
       });
 
       $scope.artistPlaylist = artistPlaylistVar;
+      $scope.artistPlaylistAlbums = artistPlaylistAlbums;
 
 
       this.addSongs = function (playlist, callback) {
@@ -855,12 +821,23 @@ angular.module('app.music', ['mediaPlayer'])
         PlayListSrv.addSongToPlaylist(song,playlist);
       };
 
+      this.toggleAlbumsList = function(){
+        this.AlbumList = true;
+        this.FullList = false;
+      };
+
+      this.toggleFullList = function(){
+        this.AlbumList = false;
+        this.FullList = true;
+      };
+
+
     }]).controller('UserPlayListCtrl', ['$routeParams', 'PlayListSrv', 'navigationMenuService',
     function ($routeParams, PlayListSrv, navigationMenuService) {
 
       this.PlayListSrv = PlayListSrv;
       var UserPlaylistVar = [],
-        playlistTitle, playlistImage, playlistBanner, playlistGenre;
+        playlistTitle, playlistImage, playlistBanner, playlistGenre,playlistUrlName;
 
       PlayListSrv.getPlaylist($routeParams.title, function (response) {
 
@@ -883,6 +860,7 @@ angular.module('app.music', ['mediaPlayer'])
           playlistImage = response.image;
           playlistBanner = response.banner;
           playlistGenre = response.genre;
+          playlistUrlName = response.url_name;
         }
 
       });
@@ -892,6 +870,7 @@ angular.module('app.music', ['mediaPlayer'])
       this.playlistImage = playlistImage;
       this.playlistBanner = playlistBanner;
       this.playlistGenre = playlistGenre;
+      this.playlistUrlName = playlistUrlName;
 
       this.addSongs = function (playlist, callback) {
 
@@ -929,14 +908,29 @@ angular.module('app.music', ['mediaPlayer'])
         PlayListSrv.addSongToPlaylist(song,playlist);
       };
 
-    }]).controller("CreatePlaylistInstanceCtrl", ["$scope", "$modalInstance",'playlistName', 'song',
-    function ($scope, $modalInstance, playlistName, song) {
+      this.removeSongFromPlaylist = function(song,playlist){
+
+        PlayListSrv.removeSongFromPlaylist(song,playlist);
+
+        //Remove from client so he notices immediately
+        this.userPlaylist = _.without(this.userPlaylist,song);
+      };
+
+    }]).controller("CreatePlaylistInstanceCtrl", ["$scope", "$modalInstance",'playlistName', 'song','loggit',
+    function ($scope, $modalInstance, playlistName, song,loggit) {
 
       $scope.playlistName = playlistName;
       $scope.song = song;
 
       $scope.ok = function () {
-        $modalInstance.close($scope);
+
+        if($scope.playlistName !== ""){
+          $modalInstance.close($scope);
+        }
+        else {
+          $modalInstance.dismiss('cancel');
+          loggit.logError("Error! Could not create a playlist with no name..");
+        }
       };
 
       $scope.cancel = function () {

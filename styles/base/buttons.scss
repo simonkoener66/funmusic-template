@@ -14,6 +14,7 @@
   white-space: nowrap;
   padding:6px 25px;
   text-shadow:none;
+  font-size:13px;
 
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -24,15 +25,12 @@
 }
 
 .btn:focus, .btn:active:focus, .btn.active:focus {
-  outline: thin dotted;
-  outline: 5px auto -webkit-focus-ring-color;
-  outline-offset: -2px;
+  outline:none;
 }
 
 .btn:hover, .btn:focus {
   color: #767676;
   text-decoration: none;
-  @include opacity(0.9);
 }
 
 .btn:active, .btn.active {
@@ -47,32 +45,6 @@
   opacity: 0.65;
   filter: alpha(opacity=65);
   @include box-shadow(none);
-}
-
-.btn-default {
-  color: #767676;
-  background-color: #ededed;
-  border-color: #ededed;
-}
-
-.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
-  color: #767676;
-  background-color: #e1e1e1;
-  border-color: #cfcfcf;
-}
-
-.btn-primary:hover, .btn-primary:focus {
-  background-image: none;
-}
-
-.btn-default.disabled, .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled:active, .btn-default.disabled.active, .btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled]:active, .btn-default[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default.active {
-  background-color: #fafafa;
-  border-color: #ededed;
-}
-
-.btn-default .badge {
-  color: #fafafa;
-  background-color: #767676;
 }
 
 $button-styles: (
@@ -109,8 +81,6 @@ $button-styles: (
   .btn-#{$button}:active {
     border: 1px solid #fff;
     @include box-shadow(0px 0px 1px 1px $btn-color);
-    outline: 0px auto $btn-color;
-    outline-offset: -2px;
   }
 
   .btn-#{$button}:active,
@@ -144,8 +114,29 @@ $button-styles: (
   }
 }
 
+
 .btn-default {
   color:$color--text;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
+  color:$color--text;
+  background-color: #e1e1e1;
+  border-color: #cfcfcf;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-image: none;
+}
+
+.btn-default.disabled, .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled:active, .btn-default.disabled.active, .btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled]:active, .btn-default[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default.active {
+  background-color: #fafafa;
+  border-color: #ededed;
+}
+
+.btn-default .badge {
+  color: #fafafa;
+  background-color: #767676;
 }
 
 .btn-link {
@@ -683,9 +674,32 @@ $badge-colors: (
 
 .btn-tag {
   background:$color--gray-light;
+  border:1px solid $color--gray;
   color:$color--text;
-  padding:3px 12px;
+  padding:3px 8px;
   font-size:12px;
   font-style:italic;
   @include border-radius(2px);
+}
+
+.tooltip {
+  @include opacity(1);
+}
+
+.tooltip .tooltip-inner {
+  @include border-radius(2px);
+  background:$color--secondary;
+}
+
+.tooltip.top .tooltip-arrow {
+  border-top-color: $color--secondary;
+}
+.tooltip.left .tooltip-arrow {
+  border-left-color: $color--secondary;
+}
+.tooltip.right .tooltip-arrow {
+  border-right-color: $color--secondary;
+}
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: $color--secondary;
 }

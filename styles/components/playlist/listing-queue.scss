@@ -71,6 +71,7 @@
     }
 
     .music-listing__name {
+      cursor:pointer;
 
       .music-listing__artist-name {
         font-weight:bold;
@@ -96,10 +97,10 @@
         line-height: 24px;
         vertical-align: middle;
         background: transparent;
-        color: $color--secondary-light;
+        color: white;
 
         &:hover {
-          color: $color--secondary-light;
+          color: white;
         }
       }
     }

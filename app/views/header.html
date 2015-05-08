@@ -39,7 +39,7 @@
             <i class="fa fa-inbox color-white"></i>
         </a>
 
-        <div class="dropdown-menu pull-right with-arrow panel panel-default">
+        <div class="dropdown-menu pull-left with-arrow panel panel-default">
             <div class="panel-heading">
                 You have 2 messages.
             </div>
@@ -74,101 +74,49 @@
             </div>
         </div>
     </li>
-    <!--<li class="dropdown list-notifications__item">
-        <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <i class="icon-mail color-white"></i>
-        </a>
-
-        <div class="dropdown-menu pull-right with-arrow panel panel-default">
-            <div class="panel-heading">
-                You have 3 mails.
-            </div>
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <a href="javascript:;" class="media">
-                                    <span class="pull-left media-icon">
-                                        <span class="circle-icon sm bg-warning"><i class="fa fa-envelope-o"></i></span>
-                                    </span>
-
-                        <div class="media-body">
-                            <span class="block">Lisa sent you a mail</span>
-                            <span class="text-muted block">2min ago</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a href="javascript:;" class="media">
-                                    <span class="pull-left media-icon">
-                                        <span class="circle-icon sm bg-info"><i class="fa fa-envelope-o"></i></span>
-                                    </span>
-
-                        <div class="media-body">
-                            <span class="block">Jane sent you a mail</span>
-                            <span class="text-muted">3 hours ago</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="list-group-item">
-                    <a href="javascript:;" class="media">
-                                    <span class="pull-left media-icon">
-                                        <span class="circle-icon sm bg-success"><i class="fa fa-envelope-o"></i></span>
-                                    </span>
-
-                        <div class="media-body">
-                            <span class="block">Lynda sent you a mail</span>
-                            <span class="text-muted">9 hours ago</span>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <div class="panel-footer">
-                <a href="javascript:;">Show all mails.</a>
-            </div>
-        </div>
-    </li>-->
     <li class="dropdown list-notifications__item">
         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <i class="fa fa-bell-o nav-icon color-white"></i>
+            <i class="musicicon-radio43 nav-icon color-white"></i>
         </a>
 
-        <div class="dropdown-menu pull-right with-arrow panel panel-default">
+        <div class="dropdown-menu pull-left with-arrow panel panel-default">
             <div class="panel-heading">
-                You have 3 notifications.
+                You have 3 music suggestions
             </div>
             <ul class="list-group">
                 <li class="list-group-item">
                     <a href="javascript:;" class="media">
                                     <span class="pull-left media-icon">
-                                        <span class="circle-icon sm bg-success"><i class="fa fa-bell-o"></i></span>
+                                        <span class="circle-icon sm bg-success"><i class="musicicon-music201"></i></span>
                                     </span>
 
                         <div class="media-body">
-                            <span class="block">New tasks needs to be done</span>
-                            <span class="text-muted block">2min ago</span>
+                            <span class="block">The kingdom of fire</span>
+                            <span class="text-muted block">Jane Doe - 2min ago</span>
                         </div>
                     </a>
                 </li>
                 <li class="list-group-item">
                     <a href="javascript:;" class="media">
                                     <span class="pull-left media-icon">
-                                        <span class="circle-icon sm bg-info"><i class="fa fa-bell-o"></i></span>
+                                        <span class="circle-icon sm bg-info"><i class="musicicon-dj4"></i></span>
                                     </span>
 
                         <div class="media-body">
-                            <span class="block">Change your password</span>
-                            <span class="text-muted">3 hours ago</span>
+                            <span class="block">The Lunatics</span>
+                            <span class="text-muted">John Doe - 3 hours ago</span>
                         </div>
                     </a>
                 </li>
                 <li class="list-group-item">
                     <a href="javascript:;" class="media">
                                     <span class="pull-left media-icon">
-                                        <span class="circle-icon sm bg-danger"><i class="fa fa-bell-o"></i></span>
+                                        <span class="circle-icon sm bg-danger"><i class="musicicon-cymbals2"></i></span>
                                     </span>
 
                         <div class="media-body">
-                            <span class="block">New feature added</span>
-                            <span class="text-muted">9 hours ago</span>
+                            <span class="block">The Crookers</span>
+                            <span class="text-muted">John Doe - 9 hours ago</span>
                         </div>
                     </a>
                 </li>
@@ -187,30 +135,56 @@
 
 
 
-<ul class="nav-button pull-right list-unstyled">
+<ul data-ng-controller="ActionsCtrl as actions" class="nav-button pull-right list-unstyled header-actions">
     <li>
-        <a href="#/tasks" class="">
-            <i class="icon-align-right color-light"></i>
+        <a href="#/tasks" class="online">
+            <i class="fa fa-bell color-default"></i>
         </a>
     </li>
+  <li>
+    <a href="javascript:;" data-ng-click="actions.toggleChat()" tooltip-placement="left" tooltip="Toggle chat" tooltip-append-to-body="true">
+      <i class="fa fa-comments-o color-default"></i>
+    </a>
+  </li>
 </ul>
 
 <ul class="nav-button pull-right list-unstyled">
 
     <li class="dropdown text-small nav-profile">
         <a href="javascript:;" class="dropdown-toggle text-muted" data-toggle="dropdown" aria-expanded="false">
-            <span class="nav-profile__welcome-text">Welcome Jane Doe &nbsp; </span><img src="dist/images/user.png" alt="" class="img30_30"/>
+            <img src="dist/images/user.png" alt="" class="img30_30"/>
         </a>
 
-        <div class="dropdown-menu pull-left with-arrow panel panel-default">
+        <div class="dropdown-menu pull-right with-arrow panel panel-default">
 
-            <ul class="list-group">
-                <li class="list-group-item">
-                    <a href="#/pages/profile">
-                        <i class="fa fa-user color-info"></i>
-                        <span>Profile</span>
-                    </a>
-                </li>
+          <ul class="list-group">
+            <li class="list-group-item">
+              <a href="#/pages/profile" class="media">
+                <span class="block"><i class="fa fa-user color-secondary"></i>My profile</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#/pages/signin" class="media">
+                <span class="block"><i class="fa fa-lock color-secondary"></i>Lock screen</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#/pages/signin" class="media">
+                <span class="block"><i class="fa fa-sign-out color-secondary"></i>Sign out</span>
+              </a>
+            </li>
+            <li class="list-group-item">
+              <a href="#/pages/forgot" class="media">
+                <span class="block"><i class="fa fa-envelope color-secondary"></i>Recover password</span>
+              </a>
+            </li>
+          </ul>
+          <div class="panel-footer">
+            <a href="javascript:;">Show all notifications.</a>
+          </div>
+
+            <!--<ul class="list-group">
+
                 <li class="list-group-item">
                     <a href="#/tasks">
                         <i class="fa fa-check color-success"></i>
@@ -229,7 +203,7 @@
                         <span>Log out</span>
                     </a>
                 </li>
-            </ul>
+            </ul>-->
         </div>
     </li>
 

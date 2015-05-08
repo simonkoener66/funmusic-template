@@ -14,14 +14,19 @@
 
 .panel-profile .panel-heading {
   border-bottom: 2px solid $color--primary;
-  background: url(../images/bgprofile.jpg) center;
+  background: url(../images/bgprofile.png) center;
   background-size: cover;
   position: relative;
+  padding: {
+    bottom:100px;
+    top:100px;
+  }
+  text-align:center;
 }
 
 .panel-profile .panel-heading .overlay_prof {
   position: absolute;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(62, 62, 62, 0.7);
   width: 100%;
   height: 100%;
   left: 0;
@@ -32,6 +37,31 @@
 .panel-profile .panel-heading .profile_info {
   z-index: 1;
   position: relative;
+  max-width:60%;
+  margin:auto;
+
+  .profile-image img{
+    padding:4px;
+    border:3px solid $color--primary;
+    border-left-color: transparent;
+  }
+
+  .user-profile__icon {
+    background:white;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 40px;
+    margin-left: 40px;
+    font-size: 20px;
+    line-height: 40px;
+    @include border-radius(100%);
+    color:$color--secondary;
+  }
+
+  & > h5 {
+    line-height:22px;
+  }
 }
 
 .page-profile .panel-profile .panel-heading .profile_info {
@@ -39,44 +69,27 @@
   padding-bottom: 100px;
 }
 
-.panel-profile .profile img {
-  @include border-radius(4px);
-}
+.profile-sub-header {
+  background:white;
+  padding: {
+    left:40px;
+    right:40px;
+    top:5px;
+    bottom:5px;
+  }
 
-.panel-profile .list-group > li > i {
-  margin-right: 10px;
-  font-size: 16px;
-  color: #999;
-  table-layout: fixed;
-}
+  .profile-stats-block {
+    display:inline-block;
+    margin-right:20px;
+    padding:10px;
 
-.panel-profile .list-justified-container {
-  padding: 15px 0;
-}
+    .stats-label {
+      color:$color--gray;
+    }
 
-.panel-profile ul.list-justified {
-  display: table;
-  width: 100%;
-  list-style: none;
-  padding: 0;
-}
-
-.panel-profile ul.list-justified > li {
-  float: none;
-  display: table-cell;
-  padding: 10px;
-  width: 1%;
-  border-right: 1px solid #eee;
-}
-
-.panel-profile ul.list-justified > li:last-child {
-  border: none;
-}
-
-.panel-profile ul.list-justified > li p {
-  margin: 0;
-}
-
-.page-profile img.media-object {
-  @include border-radius(0px);
+    .stats-value {
+      color:$color--secondary;
+      font-size:14px;
+    }
+  }
 }

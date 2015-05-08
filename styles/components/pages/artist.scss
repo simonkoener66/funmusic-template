@@ -1,9 +1,14 @@
 .artist-banner {
   position: relative;
-  height: 242px;
+  height: 342px;
   margin: 0 auto;
   text-align:center;
   color:white;
+  padding: {
+    top:50px;
+    bottom:50px;
+  }
+  border-bottom:2px solid $color--primary;
 
   background-size: cover;
   background-position: center;
@@ -12,16 +17,10 @@
     content: "";
     position: absolute;
     width: 100%;
-    height: 85%;
+    height: 100%;
     bottom: 0;
     left:0;
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.1) 28%, rgba(0, 0, 0, 0.7) 100%);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0)), color-stop(28%, rgba(0, 0, 0, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.7)));
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.1) 28%, rgba(0, 0, 0, 0.7) 100%);
-    background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.1) 28%, rgba(0, 0, 0, 0.7) 100%);
-    background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.1) 28%, rgba(0, 0, 0, 0.7) 100%);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0.1) 28%, rgba(0, 0, 0, 0.7) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#e6000000', GradientType=0);
+    background: rgba(62, 62, 62, 0.7);
   }
 
   .artist-inner {
@@ -32,8 +31,8 @@
     vertical-align: middle;
     position:relative;
 
-    h3 {
-      font-weight:bold;
+    h5 {
+      line-height: 22px;
     }
   }
 
@@ -41,9 +40,11 @@
     margin-top:20px;
 
     img {
-      width:80px;
+      width:100px;
       height:auto;
+      padding:4px;
       border:3px solid white;
+      border-bottom-color: transparent;
     }
   }
 
@@ -103,6 +104,27 @@
   }
 }
 
-.page-artist {
+.artist-sub-header {
+  background:white;
+  padding: {
+    left:40px;
+    right:40px;
+    top:5px;
+    bottom:5px;
+  }
 
+  .artist-stats-block {
+    display:inline-block;
+    margin-right:20px;
+    padding:10px;
+
+    .stats-label {
+      color:$color--gray;
+    }
+
+    .stats-value {
+      color:$color--secondary;
+      font-size:14px;
+    }
+  }
 }

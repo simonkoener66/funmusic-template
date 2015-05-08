@@ -135,7 +135,7 @@ angular.module("app.ui.services", []).factory("loggit", [
 
     PlayListObj.getSongs = function(callback){
 
-      $http.get('dist/data/artistsSongs.json').success(function(data) {
+      $http.get('dist/data/artistsMusic.json').success(function(data) {
 
         artists = data;
 
@@ -183,45 +183,37 @@ angular.module("app.ui.services", []).factory("loggit", [
      **************************/
 
     playlists.list[0] = {
-      url_name: 'top-songs',
-      name: 'Top Songs',
-      banner: 'https://download.unsplash.com/32/6Icr9fARMmTjTHqTzK8z_DSC_0123.jpg',
-      image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg',
+      url_name: 'greatest-heats',
+      name: 'Greatest hits',
+      banner: 'dist/images/playlists/playlistbanner.jpg',
+      image: 'dist/images/songs/song10.jpg',
       genre: [],
       songs: [
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg', displayName: 'Beatles - Come Together' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg', displayName: 'Beatles - Drive my car' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg', displayName: 'Beatles - Loser' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg', displayName: 'Beatles - All my loving' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/82/Beatles_taxman.ogg', displayName: 'Beatles - Taxman' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg', displayName: 'Beatles - Come Together' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg', displayName: 'Beatles - Drive my car' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg', displayName: 'Beatles - Loser' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg', displayName: 'Beatles - All my loving' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/82/Beatles_taxman.ogg', displayName: 'Beatles - Taxman' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg', displayName: 'Beatles - Come Together' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg', displayName: 'Beatles - Drive my car' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg', displayName: 'Beatles - Loser' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg', displayName: 'Beatles - All my loving' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/82/Beatles_taxman.ogg', displayName: 'Beatles - Taxman' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg', displayName: 'Beatles - Come Together' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg', displayName: 'Beatles - Drive my car' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg', displayName: 'Beatles - Loser' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg', displayName: 'Beatles - All my loving' },
-        {image: 'http://art.originalvagabonds.com/system/files/imagecache/product_full/TheBeatles1-1212.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/82/Beatles_taxman.ogg', displayName: 'Beatles - Taxman' }
+        {image: 'dist/images/songs/song1.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg', displayName: 'Beatles - Come Together' },
+        {image: 'dist/images/songs/song2.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg', displayName: 'Beatles - Drive my car' },
+        {image: 'dist/images/songs/song3.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg', displayName: 'Beatles - Loser' },
+        {image: 'dist/images/songs/song4.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg', displayName: 'Beatles - All my loving' },
+        {image: 'dist/images/songs/song5.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/82/Beatles_taxman.ogg', displayName: 'Beatles - Taxman' },
+        {image: 'dist/images/songs/song6.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg', displayName: 'Beatles - Come Together' },
+        {image: 'dist/images/songs/song7.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg', displayName: 'Beatles - Drive my car' },
+        {image: 'dist/images/songs/song8.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg', displayName: 'Beatles - Loser' },
+        {image: 'dist/images/songs/song9.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg', displayName: 'Beatles - All my loving' }
       ]
     };
 
     playlists.list[1] = {
-      url_name: 'enya',
-      name: 'Enya',
-      banner: 'https://download.unsplash.com/32/6Icr9fARMmTjTHqTzK8z_DSC_0123.jpg',
-      image: 'http://upload.wikimedia.org/wikipedia/en/4/4b/Enya4.jpg',
+      url_name: 'songsofdream',
+      name: 'Sons of Dream',
+      banner: 'dist/images/playlists/playlistbanner.jpg',
+      image: 'dist/images/songs/song11.jpg',
       genre: ['New age','Celtic','World'],
       songs: [
-        {image: 'http://upload.wikimedia.org/wikipedia/en/4/4b/Enya4.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/6/65/Enyalaetha.ogg', displayName: 'Enya - Laetha' },
-        {image: 'http://upload.wikimedia.org/wikipedia/en/4/4b/Enya4.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/c/ca/Enyaonlyif.ogg', displayName: 'Enya - Only if' },
-        {image: 'http://upload.wikimedia.org/wikipedia/en/4/4b/Enya4.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/b/ba/Enya-Trains_and_Winter_Rains.ogg', displayName: 'Enya - Trains and winter rains' }
+        {image: 'dist/images/songs/song12.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/6/65/Enyalaetha.ogg', displayName: 'Enya - Laetha' },
+        {image: 'dist/images/songs/song13.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/c/ca/Enyaonlyif.ogg', displayName: 'Enya - Only if' },
+        {image: 'dist/images/songs/song14.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/b/ba/Enya-Trains_and_Winter_Rains.ogg', displayName: 'Enya - Trains and winter rains'},
+        {image: 'dist/images/songs/song15.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg', displayName: 'Beatles - Drive my car' },
+        {image: 'dist/images/songs/song16.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg', displayName: 'Beatles - Loser' },
+        {image: 'dist/images/songs/song17.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg', displayName: 'Beatles - All my loving' }
       ]
     };
 
@@ -229,11 +221,15 @@ angular.module("app.ui.services", []).factory("loggit", [
       return JSON.parse(localStorage.getItem(storage_id) || JSON.stringify(playlists));
     };
 
-    PlayListObj.put = function (playlist){
+    PlayListObj.put = function (playlist,callback){
 
       PlayListObj.playlists.push(playlist);
 
-      return localStorage.setItem(storage_id, JSON.stringify(PlayListObj.playlistsObj));
+      localStorage.setItem(storage_id, JSON.stringify(PlayListObj.playlistsObj));
+
+      setTimeout(function(){
+        callback(localStorage.getItem(storage_id));
+      },500);
     };
 
     PlayListObj.update = function (playlists){
@@ -275,6 +271,32 @@ angular.module("app.ui.services", []).factory("loggit", [
 
     };
 
+    PlayListObj.removeSongFromPlaylist = function(song,playListName) {
+
+      _.map(PlayListObj.playlists, function(playlist){
+
+        if(playlist.name == playListName){
+
+          _.map(playlist.songs, function(songOnList){
+
+            if(songOnList.url == song.url){
+
+              playlist.songs = _.without(playlist.songs,songOnList);
+
+              console.log(PlayListObj.playlists);
+
+              PlayListObj.update(PlayListObj.playlists);
+
+            }
+
+          });
+
+        }
+
+      });
+
+    };
+
     return PlayListObj;
 
   }).factory("navigationMenuService",
@@ -292,7 +314,7 @@ angular.module("app.ui.services", []).factory("loggit", [
     return MENU_STATES;
 
 
-  }).factory("CreatePlaylistSrv",['$modal','$log','PlayListSrv',function($modal,$log,PlayListSrv) {
+  }).factory("CreatePlaylistSrv",['$modal','$log','PlayListSrv','$location',function($modal,$log,PlayListSrv,$location) {
 
     /**************************
      Provides a way to create a new playlist
@@ -331,14 +353,16 @@ angular.module("app.ui.services", []).factory("loggit", [
        new_playlist = {
          url_name: url_name,
          name: playlistName,
-         banner: 'https://download.unsplash.com/32/6Icr9fARMmTjTHqTzK8z_DSC_0123.jpg',
-         image: 'http://www.perfume-city.com/wordpress/wp-content/uploads/2015/01/spotify.png',
+         banner: 'dist/images/playlists/playlistbanner.jpg',
+         image: 'dist/images/songs/song17.jpg',
          genre: [],
          songs: songs
        };
 
-       PlayListSrv.put(new_playlist);
+       PlayListSrv.put(new_playlist,function(response){
 
+         window.location = "#/playlist/" + url_name;
+       });
 
      }, function () {
         $log.info('Modal dismissed at: ' + new Date());
