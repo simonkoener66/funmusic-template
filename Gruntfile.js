@@ -161,7 +161,7 @@ module.exports = function(grunt) {
                     'bower_components/underscore/underscore-min.js',
                     'bower_components/jqvmap/jqvmap/jquery.vmap.min.js',
                     'bower_components/angular-scroll/angular-scroll.min.js',
-                    'bower_components/ng-parallax/angular-parallax.min.js',
+                    'scripts/angular-dragdrop.js',
                     'scripts/extras.js',
                     'app/*.js' ],
                 dest: 'dist/js/app.js'

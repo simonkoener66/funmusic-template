@@ -629,7 +629,7 @@ angular.module("app.ui.ctrls", []).controller("NotifyCtrl", ["$scope", "loggit",
  Provides general controllers for the app
  */
 
-angular.module('app.music', ['mediaPlayer'])
+angular.module('app.music', ['mediaPlayer','ngDragDrop'])
   .controller('PlayListCtrl', ['$scope','PlayListSrv', 'CreatePlaylistSrv',
     function ($scope,PlayListSrv, CreatePlaylistSrv) {
       this.audioPlaylist = [];
