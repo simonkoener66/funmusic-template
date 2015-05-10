@@ -750,7 +750,7 @@ angular.module('app.music', ['mediaPlayer','ngDragDrop'])
                 image: song.image,
                 src: song.url,
                 url: song.url,
-                type: 'audio/ogg',
+                type: song.type,
                 artist: parseTitle[1],
                 title: parseTitle[2],
                 displayName:song.displayName
@@ -762,7 +762,7 @@ angular.module('app.music', ['mediaPlayer','ngDragDrop'])
                 image: song.image,
                 src: song.url,
                 url: song.url,
-                type: 'audio/ogg',
+                type: song.type,
                 artist: parseTitle[1],
                 title: parseTitle[2],
                 displayName:song.displayName
@@ -849,7 +849,7 @@ angular.module('app.music', ['mediaPlayer','ngDragDrop'])
               image: song.image,
               src: song.url,
               url: song.url,
-              type: 'audio/ogg',
+              type: song.type,
               artist: parseTitle[1],
               title: parseTitle[2],
               displayName:song.displayName

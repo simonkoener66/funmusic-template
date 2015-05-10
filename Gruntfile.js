@@ -34,42 +34,64 @@ module.exports = function(grunt) {
                     src: ['fonts/*.*'],
                     dest: 'dist'
                 },{
-                    //for dripicons fonts
-                    expand: true,
-                    dot: true,
-                    cwd: 'bower_components/dripicons',
-                    src: ['fonts/*.*'],
-                    dest: 'dist'
+                  //for Fontawesome stylesheet files
+                  expand: true,
+                  dot: true,
+                  cwd: 'bower_components/fontawesome/css',
+                  src: ['font-awesome.min.css'],
+                  dest: 'dist/css'
                 },{
-                    //for weather fonts
-                    expand: true,
-                    dot: true,
-                    cwd: 'bower_components/weather-icons',
-                    src: ['font/*.*'],
-                    dest: 'dist'
+                  //for Bootstrap stylesheet files
+                  expand: true,
+                  dot: true,
+                  cwd: 'bower_components/bootstrap/dist/css',
+                  src: ['bootstrap.min.css'],
+                  dest: 'dist/css'
                 },{
-                    //for font-awesome
-                    expand: true,
-                    dot: true,
-                    cwd: 'bower_components/font-awesome',
-                    src: ['fonts/*.*'],
-                    dest: 'dist'
+                  //for Bootstrap theme stylesheet files
+                  expand: true,
+                  dot: true,
+                  cwd: 'bower_components/bootstrap/dist/css',
+                  src: ['bootstrap-theme.min.css'],
+                  dest: 'dist/css'
                 },
                 {
-                    //for theme music fonts
-                    expand: true,
-                    dot: true,
-                    cwd: 'fonts',
-                    src: ['*.*'],
-                    dest: 'dist/fonts'
+                  //for dripicons fonts
+                  expand: true,
+                  dot: true,
+                  cwd: 'bower_components/dripicons',
+                  src: ['fonts/*.*'],
+                  dest: 'dist'
+                },{
+                  //for weather fonts
+                  expand: true,
+                  dot: true,
+                  cwd: 'bower_components/weather-icons',
+                  src: ['font/*.*'],
+                  dest: 'dist'
+                },{
+                  //for font-awesome
+                  expand: true,
+                  dot: true,
+                  cwd: 'bower_components/font-awesome',
+                  src: ['fonts/*.*'],
+                  dest: 'dist'
                 },
                 {
-                    //for Images
-                    expand: true,
-                    dot: true,
-                    cwd: 'images',
-                    src: ['*.*','*/*'],
-                    dest: 'dist/images'
+                  //for theme music fonts
+                  expand: true,
+                  dot: true,
+                  cwd: 'fonts',
+                  src: ['*.*'],
+                  dest: 'dist/fonts'
+                },
+                {
+                  //for Images
+                  expand: true,
+                  dot: true,
+                  cwd: 'images',
+                  src: ['*.*','*/*'],
+                  dest: 'dist/images'
                 },
                 {
                   //for services data
@@ -84,6 +106,14 @@ module.exports = function(grunt) {
                   expand: true,
                   dot: true,
                   cwd: 'bower_components/underscore',
+                  src: ['*.map'],
+                  dest: 'dist/js'
+                },
+                {
+                  //for Angular source map
+                  expand: true,
+                  dot: true,
+                  cwd: 'bower_components/angular',
                   src: ['*.map'],
                   dest: 'dist/js'
                 }]
@@ -105,11 +135,8 @@ module.exports = function(grunt) {
             combine: {
                 files: {
                     'dist/css/main.css': [
-                        'bower_components/fontawesome/css/font-awesome.min.css',
                         'bower_components/dripicons/css/dripicons.css',
                         'bower_components/weather-icons/css/weather-icons.min.css',
-                        'bower_components/bootstrap/dist/css/bootstrap.min.css',
-                        'bower_components/bootstrap/dist/css/bootstrap-theme.min.css',
                         'styles/fonts/music-icons/music-icons.css',
                         'styles/styles.css'
                     ]
@@ -161,6 +188,7 @@ module.exports = function(grunt) {
                     'bower_components/underscore/underscore-min.js',
                     'bower_components/jqvmap/jqvmap/jquery.vmap.min.js',
                     'bower_components/angular-scroll/angular-scroll.min.js',
+                    'bower_components/html5shiv/dist/html5shiv.min.js',
                     'scripts/angular-dragdrop.js',
                     'scripts/extras.js',
                     'app/*.js' ],

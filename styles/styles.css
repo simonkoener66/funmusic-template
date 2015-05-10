@@ -521,8 +521,7 @@
   right: 0px !important; }
 
 .scrollable {
-  overflow-x: hidden;
-  overflow-y: auto; }
+  overflow: auto; }
 
 .img-responsive {
   width: 100% \9; }
@@ -5875,9 +5874,8 @@ body {
     height: 100%; }
   #content.fixed .inner-wrapper {
     position: relative;
-    overflow: hidden;
     height: 100%;
-    display: table;
+    display: table-cell;
     width: 100%; }
     #content.fixed .inner-wrapper .inner-page {
       position: absolute;

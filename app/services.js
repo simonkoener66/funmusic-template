@@ -189,15 +189,15 @@ angular.module("app.ui.services", []).factory("loggit", [
       image: 'dist/images/songs/song10.jpg',
       genre: [],
       songs: [
-        {image: 'dist/images/songs/song1.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg', displayName: 'Beatles - Come Together' },
-        {image: 'dist/images/songs/song2.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg', displayName: 'Beatles - Drive my car' },
-        {image: 'dist/images/songs/song3.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg', displayName: 'Beatles - Loser' },
-        {image: 'dist/images/songs/song4.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg', displayName: 'Beatles - All my loving' },
-        {image: 'dist/images/songs/song5.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/82/Beatles_taxman.ogg', displayName: 'Beatles - Taxman' },
-        {image: 'dist/images/songs/song6.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/d/d0/Beatles_cometogether.ogg', displayName: 'Beatles - Come Together' },
-        {image: 'dist/images/songs/song7.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg', displayName: 'Beatles - Drive my car' },
-        {image: 'dist/images/songs/song8.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg', displayName: 'Beatles - Loser' },
-        {image: 'dist/images/songs/song9.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg', displayName: 'Beatles - All my loving' }
+        {image: 'dist/images/songs/song1.jpg', url: 'http://ccmixter.org/content/snowflake/snowflake_-_I_Miss_You.mp3', displayName: 'Beatles - Come Together', type: "audio/mpeg" },
+        {image: 'dist/images/songs/song2.jpg', url: 'http://ccmixter.org/content/admiralbob77/admiralbob77_-_The_Remixin_Blues_2.mp3', displayName: 'Beatles - Drive my car', type: "audio/mpeg"  },
+        {image: 'dist/images/songs/song3.jpg', url: 'http://ccmixter.org/content/unreal_dm/unreal_dm_-_Recycle_This.mp3', displayName: 'Beatles - Loser', type: "audio/mpeg"  },
+        {image: 'dist/images/songs/song4.jpg', url: 'http://ccmixter.org/content/snowflake/snowflake_-_I_Miss_You.mp3', displayName: 'Beatles - All my loving', type: "audio/mpeg"  },
+        {image: 'dist/images/songs/song5.jpg', url: 'http://ccmixter.org/content/admiralbob77/admiralbob77_-_The_Remixin_Blues_2.mp3', displayName: 'Beatles - Taxman', type: "audio/mpeg"  },
+        {image: 'dist/images/songs/song6.jpg', url: 'http://ccmixter.org/content/snowflake/snowflake_-_I_Miss_You.mp3', displayName: 'Beatles - Come Together', type: "audio/mpeg"  },
+        {image: 'dist/images/songs/song7.jpg', url: 'http://ccmixter.org/content/admiralbob77/admiralbob77_-_The_Remixin_Blues_2.mp3', displayName: 'Beatles - Drive my car', type: "audio/mpeg"  },
+        {image: 'dist/images/songs/song8.jpg', url: 'http://ccmixter.org/content/unreal_dm/unreal_dm_-_Recycle_This.mp3', displayName: 'Beatles - Loser', type: "audio/mpeg"  },
+        {image: 'dist/images/songs/song9.jpg', url: 'http://ccmixter.org/content/snowflake/snowflake_-_I_Miss_You.mp3', displayName: 'Beatles - All my loving', type: "audio/mpeg"  }
       ]
     };
 
@@ -208,12 +208,12 @@ angular.module("app.ui.services", []).factory("loggit", [
       image: 'dist/images/songs/song11.jpg',
       genre: ['New age','Celtic','World'],
       songs: [
-        {image: 'dist/images/songs/song12.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/6/65/Enyalaetha.ogg', displayName: 'Enya - Laetha' },
-        {image: 'dist/images/songs/song13.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/c/ca/Enyaonlyif.ogg', displayName: 'Enya - Only if' },
-        {image: 'dist/images/songs/song14.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/b/ba/Enya-Trains_and_Winter_Rains.ogg', displayName: 'Enya - Trains and winter rains'},
-        {image: 'dist/images/songs/song15.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/8/8c/Beatles_drive_my_car.ogg', displayName: 'Beatles - Drive my car' },
-        {image: 'dist/images/songs/song16.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/1/1b/Beatles_loser.ogg', displayName: 'Beatles - Loser' },
-        {image: 'dist/images/songs/song17.jpg', url: 'http://upload.wikimedia.org/wikipedia/en/5/5a/Beatles_all_my_loving.ogg', displayName: 'Beatles - All my loving' }
+        {image: 'dist/images/songs/song12.jpg', url: 'http://ccmixter.org/content/admiralbob77/admiralbob77_-_The_Remixin_Blues_2.mp3', displayName: 'Enya - Laetha', type: "audio/mpeg"  },
+        {image: 'dist/images/songs/song13.jpg', url: 'http://ccmixter.org/content/unreal_dm/unreal_dm_-_Recycle_This.mp3', displayName: 'Enya - Only if', type: "audio/mpeg"  },
+        {image: 'dist/images/songs/song14.jpg', url: 'http://ccmixter.org/content/snowflake/snowflake_-_I_Miss_You.mp3', displayName: 'Enya - Trains and winter rains', type: "audio/mpeg" },
+        {image: 'dist/images/songs/song15.jpg', url: 'http://ccmixter.org/content/admiralbob77/admiralbob77_-_The_Remixin_Blues_2.mp3', displayName: 'Beatles - Drive my car', type: "audio/mpeg"  },
+        {image: 'dist/images/songs/song16.jpg', url: 'http://ccmixter.org/content/unreal_dm/unreal_dm_-_Recycle_This.mp3', displayName: 'Beatles - Loser', type: "audio/mpeg"  },
+        {image: 'dist/images/songs/song17.jpg', url: 'http://ccmixter.org/content/snowflake/snowflake_-_I_Miss_You.mp3', displayName: 'Beatles - All my loving', type: "audio/mpeg"  }
       ]
     };
 

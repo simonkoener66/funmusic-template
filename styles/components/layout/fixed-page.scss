@@ -14,9 +14,8 @@
 
   .inner-wrapper {
     position: relative;
-    overflow: hidden;
     height: 100%;
-    display: table;
+    display: table-cell;
     width: 100%;
 
     .inner-page {
