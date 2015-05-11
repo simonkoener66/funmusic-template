@@ -4914,7 +4914,8 @@ fieldset[disabled] .btn-white.active {
   margin-top: 6px; }
 
 .list-group-item {
-  border: 1px solid #eff2f7; }
+  border: 1px solid #eff2f7;
+  line-height: 20px; }
 
 .list-group-item:first-child {
   border-top-right-radius: 0;
@@ -6075,7 +6076,8 @@ body {
 .top-header .top-nav .nav-button {
   font-size: 18px;
   line-height: 22px;
-  margin-top: 8px; }
+  margin-top: 8px;
+  position: relative; }
 
 .top-header .top-nav .nav-left > li, .top-header .top-nav .nav-right > li {
   float: left; }
@@ -7932,6 +7934,8 @@ label {
     margin-top: 3px;
     padding-top: 6px;
     color: white; }
+  .music-listing--queue .music-listing__songs .music-listing__row.on-drag-hover {
+    padding-top: 50px; }
   .music-listing--queue .music-listing__songs .music-listing__number {
     float: left;
     width: 40px;
@@ -7954,7 +7958,8 @@ label {
   .music-listing--queue .music-listing__songs .music-listing__thumbnail {
     float: left;
     margin-right: 10px;
-    margin-left: 10px; }
+    margin-left: 10px;
+    cursor: pointer; }
     .music-listing--queue .music-listing__songs .music-listing__thumbnail img {
       width: 30px;
       height: auto;
@@ -7963,10 +7968,9 @@ label {
       -ms-border-radius: 2px;
       -o-border-radius: 2px;
       border-radius: 2px; }
-  .music-listing--queue .music-listing__songs .music-listing__name {
-    cursor: pointer; }
-    .music-listing--queue .music-listing__songs .music-listing__name .music-listing__artist-name {
-      font-weight: bold; }
+  .music-listing--queue .music-listing__songs .music-listing__name .music-listing__artist-name {
+    font-weight: bold;
+    cursor: move; }
   .music-listing--queue .music-listing__songs .music-listing__row-actions {
     height: 30px;
     margin-right: 10px;

@@ -37,6 +37,10 @@
       color:white;
     }
 
+    .music-listing__row.on-drag-hover {
+      padding-top:50px;
+    }
+
     .music-listing__number {
       float:left;
       width:40px;
@@ -62,6 +66,7 @@
         right:10px;
         left:10px;
       }
+      cursor:pointer;
 
       img {
         width:30px;
@@ -71,10 +76,11 @@
     }
 
     .music-listing__name {
-      cursor:pointer;
+      cursor:move;
 
       .music-listing__artist-name {
         font-weight:bold;
+        cursor:move;
       }
     }
 

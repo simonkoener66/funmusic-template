@@ -137,9 +137,44 @@
 
 <ul data-ng-controller="ActionsCtrl as actions" class="nav-button pull-right list-unstyled header-actions">
     <li>
-        <a href="#/tasks" class="online">
-            <i class="fa fa-bell color-default"></i>
-        </a>
+      <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        <i class="fa fa-bell color-default"></i>
+      </a>
+
+      <div class="dropdown-menu pull-right with-arrow panel panel-default">
+        <div class="panel-heading">
+          You have 2 notifications.
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <a href="javascript:;" class="media">
+                                    <span class="pull-left media-icon">
+                                        <span class="circle-icon sm bg-info"><i class="fa fa-comment-o"></i></span>
+                                    </span>
+
+              <div class="media-body">
+                <span class="block">Jane sent you a message</span>
+                <span class="text-muted">3 hours ago</span>
+              </div>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="javascript:;" class="media">
+                                    <span class="pull-left media-icon">
+                                        <span class="circle-icon sm bg-danger"><i class="fa fa-comment-o"></i></span>
+                                    </span>
+
+              <div class="media-body">
+                <span class="block">Lynda sent you a mail</span>
+                <span class="text-muted">9 hours ago</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div class="panel-footer">
+          <a href="javascript:;">Show all messages.</a>
+        </div>
+      </div>
     </li>
   <li>
     <a href="javascript:;" data-ng-click="actions.toggleChat()" tooltip-placement="left" tooltip="Toggle chat" tooltip-append-to-body="true">
