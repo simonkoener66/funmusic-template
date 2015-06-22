@@ -15,14 +15,17 @@
   .inner-wrapper {
     position: relative;
     height: 100%;
-    display: table-cell;
+    display: block;
     width: 100%;
+
+    @media (min-width: 768px) {
+      display: table-cell;
+    }
 
     .inner-page {
       position:absolute;
       top:0;
-      bottom:60px;
-      padding-bottom:60px;
+      padding-bottom:80px;
       display:block;
     }
   }

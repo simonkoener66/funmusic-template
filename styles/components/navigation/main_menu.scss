@@ -25,10 +25,26 @@
   -webkit-overflow-scrolling: -blackberry-touch;
 }
 
-@media (min-width: 768px) {
-  #nav-container {
-    left: 0;
+.on-canvas #nav-container {
+  left: 0;
+  top:65px;
+
+  #nav-wrapper {
+    padding-top:0;
   }
+}
+
+@media (min-width: 768px) {
+  #nav-container,
+  .on-canvas #nav-container {
+    left: 0;
+    top:0px;
+
+    #nav-wrapper {
+      padding-top:65px;
+    }
+  }
+
 }
 
 #nav-container ul {

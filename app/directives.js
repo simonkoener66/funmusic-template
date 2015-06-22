@@ -87,7 +87,7 @@ angular.module("app.directives", []).directive("imgHolder", [
                         app = $("#app"),
                         $a.on("click", function(event) {
                             var $parent, $this;
-                            return app.hasClass("nav-min") ? !1 : ($this = $(this),
+                            return ($this = $(this),
                                 $parent = $this.parent("li"),
                                 $lists.not($parent).removeClass("open").find("ul").slideUp(),
                                 $parent.toggleClass("open").find("ul").stop().slideToggle(), event.preventDefault());

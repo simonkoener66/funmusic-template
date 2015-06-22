@@ -5876,13 +5876,15 @@ body {
   #content.fixed .inner-wrapper {
     position: relative;
     height: 100%;
-    display: table-cell;
+    display: block;
     width: 100%; }
+    @media (min-width: 768px) {
+      #content.fixed .inner-wrapper {
+        display: table-cell; } }
     #content.fixed .inner-wrapper .inner-page {
       position: absolute;
       top: 0;
-      bottom: 60px;
-      padding-bottom: 60px;
+      padding-bottom: 80px;
       display: block; }
 
 .two-column .inner-page {
@@ -6623,9 +6625,20 @@ ul.team {
   -webkit-overflow-scrolling: touch;
   -webkit-overflow-scrolling: -blackberry-touch; }
 
+.on-canvas #nav-container {
+  left: 0;
+  top: 65px; }
+  .on-canvas #nav-container #nav-wrapper {
+    padding-top: 0; }
+
 @media (min-width: 768px) {
-  #nav-container {
-    left: 0; } }
+  #nav-container,
+  .on-canvas #nav-container {
+    left: 0;
+    top: 0px; }
+    #nav-container #nav-wrapper,
+    .on-canvas #nav-container #nav-wrapper {
+      padding-top: 65px; } }
 #nav-container ul {
   padding-left: 0;
   list-style: none; }
@@ -7968,9 +7981,11 @@ label {
       -ms-border-radius: 2px;
       -o-border-radius: 2px;
       border-radius: 2px; }
-  .music-listing--queue .music-listing__songs .music-listing__name .music-listing__artist-name {
-    font-weight: bold;
+  .music-listing--queue .music-listing__songs .music-listing__name {
     cursor: move; }
+    .music-listing--queue .music-listing__songs .music-listing__name .music-listing__artist-name {
+      font-weight: bold;
+      cursor: move; }
   .music-listing--queue .music-listing__songs .music-listing__row-actions {
     height: 30px;
     margin-right: 10px;
@@ -8184,8 +8199,9 @@ label {
 
 .now-playing {
   text-align: center; }
-  .now-playing .now-playing__column {
-    border-right: 1px solid #E8E8E8; }
+  @media (min-width: 768px) {
+    .now-playing .now-playing__column {
+      border-right: 1px solid #E8E8E8; } }
   .now-playing .now-playing__column:last-child {
     border: none; }
   .now-playing .now-playing__image {

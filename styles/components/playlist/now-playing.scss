@@ -1,8 +1,10 @@
 .now-playing {
   text-align:center;
 
-  .now-playing__column {
-    border-right:1px solid $color--gray-very-light;
+  @media (min-width: 768px) {
+    .now-playing__column {
+      border-right:1px solid $color--gray-very-light;
+    }
   }
 
   .now-playing__column:last-child {
