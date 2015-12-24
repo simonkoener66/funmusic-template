@@ -1,10 +1,4 @@
-<h3>An angular js admin app.</h3>
-
-Uses several charing libraries including : 
-
-Chartjs<br/>
-Flotcharts<br/>
-morris charts<br/>
+<h3>FunMusic AngularJS music template</h3>
 
 It is built using bootstrap with several custom features.
 
