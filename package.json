@@ -1,6 +1,9 @@
 {
   "name": "angular-funmusic",
   "version": "0.0.1",
+  "dependencies": {
+    "express": ">= 4.13.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-bower-task": "~0.3.4",
